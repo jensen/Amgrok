@@ -111,6 +111,8 @@ public class Player : MonoBehaviour {
 
 	public void AddHealth(float amount) {
 		health = Mathf.Clamp(health + amount, 0, maxHealth);
+		ParticleEffectsManager.Instance.PlayHealEffect(transform.position);
+
 	}
 
 	public void ReduceHealth(float amount) {

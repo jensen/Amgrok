@@ -6,6 +6,7 @@ public class ParticleEffectsManager : MonoBehaviour {
 
 	public ParticleSystem explosion;
 	public ParticleSystem bomb;
+	public ParticleSystem healing;
 
 	void Awake() {
 		Instance = this;
@@ -13,6 +14,10 @@ public class ParticleEffectsManager : MonoBehaviour {
 
 	public void PlayExplosionEffect(Vector3 position) {
 		PlayEffect(explosion, position);
+	}
+	
+	public void PlayHealEffect(Vector3 position) {
+		PlayEffect(healing, position);
 	}
 	
 	public void PlayBombEffect(Vector3 position) {
