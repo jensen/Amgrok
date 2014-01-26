@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
 public class TitleMenu : Menu {
-
-	private float offsetFromCenter = 60;
+	
+	private float offsetFromCenter = 160;
 
 	void OnGUI() {
 		GUI.skin = skin;
