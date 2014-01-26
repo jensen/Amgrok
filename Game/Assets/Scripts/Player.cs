@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(Rigidbody2D), typeof(SpriteRenderer))]
 public class Player : MonoBehaviour {
 
 	public Sprite tiltR;
