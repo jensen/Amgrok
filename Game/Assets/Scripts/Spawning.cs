@@ -52,7 +52,8 @@ public class Spawning : MonoBehaviour {
 	void Spawn() {
 		Debug.Log ("Spawn");
 		Instantiate(units[Random.Range(0, numEnemies)], GetSpawnPosition(), Quaternion.identity);
-		spawnCount ++;
+		spawnCount++;
+
 		if (spawnCount > spawnThreshold) {
 			if (LevelManager.Instance.player.killCount > killThreshold) {
 				Application.LoadLevel("Violent");
@@ -61,7 +62,7 @@ public class Spawning : MonoBehaviour {
 
 			}
 			//end Game
-				}
+		}
 	}
 
 	/// Gets the position of the next spawn.
