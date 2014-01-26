@@ -1387,7 +1387,7 @@ MonoBehaviour:
   crazyFire: 0
   craziness: .400000006
   crazySpeedup: .5
-  bomb: 0
+  bomb: 6
   health: 75
   maxHealth: 100
   shootingDirection: 0
