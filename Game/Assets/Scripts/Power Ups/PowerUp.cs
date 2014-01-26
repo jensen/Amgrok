@@ -16,4 +16,8 @@ public class PowerUp : Enemy {
 		SoundEffectsManager.Instance.PlayPowerupSound();
 		Destroy(gameObject);
 	}
+
+	protected override void TouchPlayer () {
+		Destroy(gameObject);
+	}
 }

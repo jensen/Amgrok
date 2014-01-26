@@ -14,7 +14,7 @@ public class DelayedSplit : MonoBehaviour {
 		yield return new WaitForSeconds(splitDelay);
 
 		var left = (Enemy) Instantiate(prefab, transform.position, transform.rotation);
-		left.speed = relativeSpeed - splitSpeed;
+		left.speed = relativeSpeed + Vector2.Scale(new Vector2(-1, 1), splitSpeed);
 		
 		var right = (Enemy) Instantiate(prefab, transform.position, transform.rotation);
 		right.speed = relativeSpeed + splitSpeed;

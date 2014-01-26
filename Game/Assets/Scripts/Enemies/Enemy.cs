@@ -66,7 +66,9 @@ public class Enemy : MonoBehaviour {
 		// if enemy is touching player
 		if (touchedPlayer) {
 			BroadcastMessage("OnTouchPlayer", SendMessageOptions.DontRequireReceiver);
-			
+
+			TouchPlayer();
+
 			Debug.Log ("Touch player.");
 			//Destroy(gameObject);
 			return;
@@ -109,5 +111,10 @@ public class Enemy : MonoBehaviour {
 			Debug.Log ("Reached bottom", this);
 			Destroy(gameObject);
 		}
+	}
+
+	protected virtual void TouchPlayer() {
+		LevelManager.Instance.player.ReduceHealth(20);
+		Destroy(gameObject);
 	}
 }
