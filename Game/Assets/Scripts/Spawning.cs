@@ -59,7 +59,6 @@ public class Spawning : MonoBehaviour {
 				Application.LoadLevel("Violent");
 			} else {
 				Application.LoadLevel("Peaceful");
-
 			}
 			//end Game
 		}
