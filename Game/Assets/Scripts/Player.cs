@@ -102,6 +102,10 @@ public class Player : MonoBehaviour {
 
 			// Show end screen.
 			transform.parent.gameObject.AddComponent<GameOverMenu>();
+
+			GameObject gameOver = GameObject.Find("Game Over");
+			gameOver.GetComponent<SpriteRenderer>().enabled = true;
+
 			DestroyObject(gameObject);
 		}
 		else

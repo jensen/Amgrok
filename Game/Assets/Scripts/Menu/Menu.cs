@@ -8,11 +8,13 @@ public class Menu : MonoBehaviour {
 	protected float buttonHeight = 40;
 	protected float buttonPadding = 20;
 
-	protected Vector2 screenCenter;
-	
+	protected Vector2 screenCenter {
+		get { 		
+			return new Vector2(Screen.width/2, Screen.height/2);
+		}
+	}
+
 	void Start() {
-		
-		screenCenter = new Vector2(Screen.width/2, Screen.height/2);
 		skin = Resources.Load ("GUISkin") as GUISkin;
 	}
 }
