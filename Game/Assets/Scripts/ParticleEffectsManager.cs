@@ -23,6 +23,10 @@ public class ParticleEffectsManager : MonoBehaviour {
 	public void PlayBombEffect(Vector3 position) {
 		PlayEffect(bomb, position);
 	}
+	
+	public void PlayHealingEffect(Vector3 position) {
+		PlayEffect(healing, position);
+	}
 
 	private ParticleSystem PlayEffect(ParticleSystem effect, Vector3 position)
 	{
