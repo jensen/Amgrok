@@ -18,9 +18,9 @@ public class TitleMenu : Menu {
 		GUILayout.BeginVertical();
 		GUILayout.FlexibleSpace();
 
-		if (GUILayout.Button("Easy")) Application.LoadLevel("Main");
-		if (GUILayout.Button("Medium")) Application.LoadLevel("Main");
-		if (GUILayout.Button("Hard")) Application.LoadLevel("Main");
+		if (GUILayout.Button("Easy")) LoadWithDifficulty(0);
+		if (GUILayout.Button("Medium")) LoadWithDifficulty(1);
+		if (GUILayout.Button("Hard")) LoadWithDifficulty(2);
 		if (GUILayout.Button("Quit")) Application.Quit();
 
 		GUILayout.EndVertical();
@@ -36,5 +36,13 @@ public class TitleMenu : Menu {
 		{
 			Application.Quit();
 		}*/
+	}
+
+	void LoadWithDifficulty(int d) {
+		GameObject go = new GameObject("LoadWithDifficulty");
+		DontDestroyOnLoad(go);
+		var c = go.AddComponent<StartWithDifficulty>();
+		c.difficulty = d;
+		Application.LoadLevel("Main");
 	}
 }
