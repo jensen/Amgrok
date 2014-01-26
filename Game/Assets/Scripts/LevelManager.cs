@@ -13,7 +13,6 @@ using System.Collections;
 public class LevelManager : MonoBehaviour {
 	public Player player;
 	public Spawning spawning;
-
 	/// Boundaries of the level
 	public Rect levelBounds;
 

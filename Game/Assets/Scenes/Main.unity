@@ -1252,7 +1252,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 5b7bc0517c510d34b8d1be7ec7097192, type: 2}
       propertyPath: units.Array.data[0]
       value: 
-      objectReference: {fileID: 100000, guid: 44eff360ab5639a49af06569b4974de2, type: 2}
+      objectReference: {fileID: 100000, guid: cbb99bf33003d493da10a6a1761c9823, type: 2}
     - target: {fileID: 11400000, guid: 5b7bc0517c510d34b8d1be7ec7097192, type: 2}
       propertyPath: units.Array.data[1]
       value: 
@@ -1383,6 +1383,7 @@ MonoBehaviour:
   horizSpeed: 10
   vertSpeed: 10
   fireDelay: 1
+  bombDelay: 2
   bomb: 0
   health: 50
   maxHealth: 100
@@ -3776,7 +3777,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 205c5c43df6d4784096110c9d554a326, type: 3}
   - {fileID: 21300000, guid: 112c26d5c142a764a9c24c022cdf2dfb, type: 3}
   units:
-  - {fileID: 100000, guid: 44eff360ab5639a49af06569b4974de2, type: 2}
+  - {fileID: 100000, guid: cbb99bf33003d493da10a6a1761c9823, type: 2}
   - {fileID: 100000, guid: 378aea4ecec96054a80571f435366274, type: 2}
   - {fileID: 100000, guid: 4d03089a739fa4de7a69b4f8823e5cc6, type: 2}
   - {fileID: 100000, guid: da29bb5d22870a845ac1aa3d2a9551d2, type: 2}

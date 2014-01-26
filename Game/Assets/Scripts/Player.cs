@@ -43,7 +43,6 @@ public class Player : MonoBehaviour {
 		float horizInp = Input.GetAxis ("Horizontal");
 		float horiz = horizInp * horizSpeed * Time.deltaTime;
 		float vertInp = Input.GetAxis ("Vertical");
-		float fireInp = Input.GetAxis ("Fire1");
 
 		if (Input.GetKey (KeyCode.RightControl) || Input.GetKey(KeyCode.LeftControl) || Input.GetKey (KeyCode.Space) || Input.GetKey (KeyCode.Z)) {
 			if (Time.time > _nextFire) {
