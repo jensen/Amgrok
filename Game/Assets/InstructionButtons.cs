@@ -20,9 +20,7 @@ public class InstructionButtons : Menu {
 		//GUILayout.BeginHorizontal();
 		//GUILayout.FlexibleSpace();
 		GUILayout.BeginHorizontal("box");
-		if (GUILayout.Button("Back")) ins.Back();
 		if (GUILayout.Button("Main Menu")) Application.LoadLevel("Title");
-		if (GUILayout.Button("Forward")) ins.Forward();
 			GUILayout.EndHorizontal();
 		//}
 		
