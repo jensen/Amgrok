@@ -5236,6 +5236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 19800000, guid: be6cb98004756db44b8a777f09ec0868, type: 2}
+  bomb: {fileID: 19800002, guid: a70140a96e7027e47bf65a9a177cac37, type: 2}
 --- !u!1 &2086143787
 GameObject:
   m_ObjectHideFlags: 0

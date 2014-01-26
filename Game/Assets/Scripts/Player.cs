@@ -133,6 +133,7 @@ public class Player : MonoBehaviour {
 		foreach (Enemy e in allEnemies) {
 			e.BombDestroy();
 				}
+		ParticleEffectsManager.Instance.PlayBombEffect (transform.position);
 		}
 
 	public Quaternion GetDirection() {
