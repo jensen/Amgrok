@@ -14,6 +14,7 @@ public enum BorderBehavior {
 public class Enemy : MonoBehaviour {
 	protected bool destroyOnShot = true;
 
+	public float collisionDamage = 15;
 	/// Change this field to change the enemy's sprite
 	public Sprite sprite;
 	/// Speed of the enemy
@@ -58,6 +59,7 @@ public class Enemy : MonoBehaviour {
 
 			Debug.Log ("Shot by player.");
 			if (destroyOnShot) {
+				ParticleEffectsManager.Instance.PlayExplosionEffect(gameObject.transform.position);
 				Destroy(gameObject);
 				return;
 			}
@@ -114,7 +116,8 @@ public class Enemy : MonoBehaviour {
 	}
 
 	protected virtual void TouchPlayer() {
-		LevelManager.Instance.player.ReduceHealth(20);
+		LevelManager.Instance.player.ReduceHealth(collisionDamage);
+		ParticleEffectsManager.Instance.PlayExplosionEffect(gameObject.transform.position);
 		Destroy(gameObject);
 	}
 }
