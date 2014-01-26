@@ -4,7 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(Enemy))]
 public class HomingMissile : MonoBehaviour {
 	private Enemy _enemy;
-
+	public float lifetime = 8F;
 	public float speed = 3;
 
 	void Start() {
@@ -33,6 +33,11 @@ public class HomingMissile : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		lifetime -= Time.deltaTime;
+		if (lifetime <= 0F) {
+			ParticleEffectsManager.Instance.PlayExplosionEffect(gameObject.transform.position);
+			Destroy(gameObject);
+				}
 		if (LevelManager.Instance.player != null) {
 						Vector3 relative = (LevelManager.Instance.player.transform.position - transform.position);
 
