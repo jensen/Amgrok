@@ -13,7 +13,7 @@ public class Splitter : MonoBehaviour {
 		_enemy = GetComponent<Enemy>();
 	}
 
-	void OnShotByPlayer() {
+	void OnDestroyed() {
 		var ds = (DelayedSplit) Instantiate(delayedSplit);
 		ds.transform.position = transform.position;
 		ds.transform.rotation = transform.rotation;
@@ -21,5 +21,14 @@ public class Splitter : MonoBehaviour {
 		ds.relativeSpeed = _enemy.speed;
 		ds.splitDelay = splitDelay;
 		ds.splitSpeed = splitSpeed;
+		if (LevelManager.Instance.player != null) {
+						LevelManager.Instance.player.shotNumber += 1;
+				}
+	}
+
+	OnTouchPlayer() {
+		if (LevelManager.Instance.player != null) {
+			LevelManager.Instance.player.shotNumber = ((int) Mathf.Ceil ((float) LevelManager.Instance.player.shotNumber)/2F;
+		}
 	}
 }
