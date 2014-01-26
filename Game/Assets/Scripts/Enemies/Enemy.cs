@@ -16,13 +16,13 @@ public class Enemy : MonoBehaviour {
 
 	/// Change this field to change the enemy's sprite
 	public Sprite sprite;
+	/// Damage the enemy deals when touches player.
+	public float collisionDamage = 15;
 	/// Speed of the enemy
 	public Vector2 speed = new Vector2(0, -1);
 	/// Set if true if this enemy got shot
 	public bool gotShot = false;
-
 	public bool touchedPlayer = false;
-
 	public BorderBehavior borderBehavior = BorderBehavior.Bounce;
 
 	private SpriteRenderer _sr;
@@ -114,7 +114,7 @@ public class Enemy : MonoBehaviour {
 	}
 
 	protected virtual void TouchPlayer() {
-		LevelManager.Instance.player.ReduceHealth(20);
+		LevelManager.Instance.player.ReduceHealth(collisionDamage);
 		Destroy(gameObject);
 	}
 }
