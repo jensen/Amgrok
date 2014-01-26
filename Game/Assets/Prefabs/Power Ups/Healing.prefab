@@ -64,6 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d9cd7a5fb2c524db8aa4176e1c4cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxShotsToKill: 1
   collisionDamage: 15
   sprite: {fileID: 0}
   speed: {x: 0, y: -1}
