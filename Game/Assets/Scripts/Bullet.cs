@@ -4,6 +4,7 @@ using System.Collections;
 public class Bullet : MonoBehaviour {
 	public float bulletSpeed = 20;
 	public float destroyTime = 5;
+	public Vector2 direction = Vector3.up;
 
 	void Start () {
 		Destroy(gameObject, destroyTime);
@@ -11,7 +12,7 @@ public class Bullet : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.Translate (0, bulletSpeed * Time.deltaTime, 0);
+		transform.position += (Vector3) (direction * (bulletSpeed * Time.deltaTime));
 	}
 
 	void OnTriggerEnter2D(Collider2D target) {

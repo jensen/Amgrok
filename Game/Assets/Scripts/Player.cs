@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(SpriteRenderer))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour {
 
 	public Sprite tiltR;
 	public Sprite tiltL;
-	public GameObject bullet; 
+	public Bullet bullet; 
 	public Sprite untilt;
 	public float horizSpeed = 10;
 	public float vertSpeed = 10;
@@ -14,6 +14,11 @@ public class Player : MonoBehaviour {
 
 	public float health = 100;
 	public float maxHealth = 100;
+
+	/// <summary>
+	/// The shooting direction: 0, 1, 2, 3.
+	/// </summary>
+	public int shootingDirection = 0;
 
 	private float _nextFire;
 
@@ -36,10 +41,10 @@ public class Player : MonoBehaviour {
 		}
 
 		float vert = vertInp * vertSpeed * Time.deltaTime;
-		float leftBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0)).x+1.6F;
-		float rightBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0)).x-.7F;
-		float topBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0)).y;
-		float bottomBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0)).y;
+		float leftBorder = LevelManager.Instance.levelBounds.xMin;
+		float rightBorder = LevelManager.Instance.levelBounds.xMax;
+		float topBorder = LevelManager.Instance.levelBounds.yMin;
+		float bottomBorder = LevelManager.Instance.levelBounds.yMax;
 		SpriteRenderer sr = GetComponent ("SpriteRenderer") as SpriteRenderer;
 
 		if (horiz < 0) {
@@ -67,6 +72,15 @@ public class Player : MonoBehaviour {
 
 	void Shoot () {
 		SoundEffectsManager.Instance.PlayShootSound();
-		Instantiate (bullet, transform.position, Quaternion.identity); 
+		var blt = (Bullet) Instantiate (bullet, transform.position, Quaternion.identity); 
+		blt.direction = Quaternion.AngleAxis(shootingDirection * 90, new Vector3(0, 0, 1)) * Vector2.up;
+	}
+
+	public void RotateRight() {
+		shootingDirection --;
+	}
+	
+	public void RotateLeft() {
+		shootingDirection ++;
 	}
 }
