@@ -33,7 +33,7 @@ public class MovementReverser : MonoBehaviour {
 
 	void OnDestroyed () {
 		if (LevelManager.Instance.player != null) {
-			LevelManager.Instance.player.bomb += 1;
+			LevelManager.Instance.player.getBomb();
 			LevelManager.Instance.player.horizSpeed *= -1;
 			LevelManager.Instance.player.vertSpeed *= -1;
 		}

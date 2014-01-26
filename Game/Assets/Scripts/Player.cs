@@ -18,6 +18,9 @@ public class Player : MonoBehaviour {
 	public float craziness = .4F;
 	public float crazySpeedup = .5F;
 	public int bomb = 0;
+	public int bombParts = 0;
+	public int bombPartsNeeded = 1;
+	public int maxBombs = 3;
 	public float health = 100;
 	public float maxHealth = 100;
 
@@ -126,6 +129,15 @@ public class Player : MonoBehaviour {
 			}
 			blt.direction = GetDirection () * (new Vector2 (Mathf.Sin (ang), Mathf.Cos (ang)));
 		}
+	}
+
+	public void getBomb() {
+		if (bombParts < bombPartsNeeded - 1) {
+						bombParts += 1;
+				} else if (bombParts == bombPartsNeeded - 1 && bomb < maxBombs) {
+			bomb += 1;
+			bombParts = 0;
+				}
 	}
 
 	void Bomb () {
