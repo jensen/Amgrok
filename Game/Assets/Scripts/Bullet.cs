@@ -13,5 +13,10 @@ public class Bullet : MonoBehaviour {
 	void Update () {
 		transform.Translate (0, bulletSpeed * Time.deltaTime, 0);
 	}
+
+	void OnTriggerEnter2D(Collider2D target) {
+		if (target.GetComponent<Enemy>() != null)
+			Destroy(gameObject);
+	}
 }
 

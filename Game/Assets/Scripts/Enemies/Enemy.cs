@@ -29,11 +29,12 @@ public class Enemy : MonoBehaviour {
 
 	void Awake() {
 		_sr = GetComponent<SpriteRenderer>();
+		//collider2D.isTrigger = false;
 	}
 
 	void Start() {
-		gameObject.AddComponent<Rigidbody2D>();
-		rigidbody2D.isKinematic = true;
+		//gameObject.AddComponent<Rigidbody2D>();
+		//rigidbody2D.isKinematic = true;
 	}
 
 	void Update() {
@@ -41,6 +42,7 @@ public class Enemy : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D c) {
+		Debug.Log ("Collision", c);
 		var go = c.gameObject;
 		var blt = go.GetComponent<Bullet>();
 		var plr = go.GetComponent<Player>();
