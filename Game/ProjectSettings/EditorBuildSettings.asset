@@ -15,3 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Peaceful.unity
   - enabled: 1
     path: Assets/Scenes/Violent.unity
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+  - enabled: 1
+    path: Assets/Scenes/Instructions.unity
