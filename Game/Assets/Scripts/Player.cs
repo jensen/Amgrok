@@ -21,6 +21,7 @@ public class Player : MonoBehaviour {
 	/// The shooting direction: 0, 1, 2, 3.
 	/// </summary>
 	public int shootingDirection = 0;
+	public int shotNumber = 1;
 
 	private float _nextFire;
 
@@ -94,8 +95,11 @@ public class Player : MonoBehaviour {
 
 	void Shoot () {
 		SoundEffectsManager.Instance.PlayShootSound();
-		var blt = (Bullet) Instantiate (bullet, transform.position, Quaternion.identity); 
-		blt.direction = GetDirection() * Vector2.up;
+		for (int i = 1; i <= shotNumber; i++) {
+						var blt = (Bullet)Instantiate (bullet, transform.position, Quaternion.identity); 
+						float ang = -Mathf.PI / 4 + Mathf.PI / 2 * i / (shotNumber + 1);
+						blt.direction = GetDirection () * (new Vector2 (Mathf.Sin (ang), Mathf.Cos (ang)));
+				}
 	}
 
 	public Quaternion GetDirection() {
