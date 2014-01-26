@@ -26,6 +26,7 @@ public class Spawning : MonoBehaviour {
 	public float spawnRateMaxHard = 1.4F;
 	public int spawnCount = 0;
 	public int spawnThreshold = 100;
+	public int killThreshold = 100;
 
 	private float _nextSpawn;
 	private Dictionary<char, Sprite> _spriteDict;
@@ -53,6 +54,12 @@ public class Spawning : MonoBehaviour {
 		Instantiate(units[Random.Range(0, numEnemies)], GetSpawnPosition(), Quaternion.identity);
 		spawnCount ++;
 		if (spawnCount > spawnThreshold) {
+			if (LevelManager.Instance.player.killCount > killThreshold) {
+				Application.LoadLevel("Violent");
+			} else {
+				Application.LoadLevel("Peaceful");
+
+			}
 			//end Game
 				}
 	}
