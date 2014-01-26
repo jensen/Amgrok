@@ -110,6 +110,7 @@ public class Player : MonoBehaviour {
 	}
 
 	public void AddHealth(float amount) {
+		ParticleEffectsManager.Instance.PlayHealingEffect (transform.position);
 		health = Mathf.Clamp(health + amount, 0, maxHealth);
 	}
 
@@ -162,9 +163,9 @@ public class Player : MonoBehaviour {
 		Enemy[] allEnemies = FindObjectsOfType<Enemy>() as Enemy[];
 		foreach (Enemy e in allEnemies) {
 			e.BombDestroy();
-				}
-		ParticleEffectsManager.Instance.PlayBombEffect (_bomb_position);
 		}
+		ParticleEffectsManager.Instance.PlayBombEffect (_bomb_position);
+	}
 
 	public Quaternion GetDirection() {
 		return Quaternion.AngleAxis(shootingDirection * 90, new Vector3(0, 0, 1));
