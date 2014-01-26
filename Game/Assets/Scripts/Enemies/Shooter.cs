@@ -24,7 +24,7 @@ public class Shooter : MonoBehaviour {
 
 	void OnDestroyed () {
 		if (LevelManager.Instance.player != null) {
-			LevelManager.Instance.player.crazyFire = true;
+			LevelManager.Instance.player.crazyFire = !(LevelManager.Instance.player.crazyFire);
 		}
 	}
 	
