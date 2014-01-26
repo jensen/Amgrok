@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour {
 	public Spawning spawning;
 	/// Boundaries of the level
 	public Rect levelBounds;
+	public int difficulty;
 
 	private static bool _onDestroy = false;
 	private static LevelManager _instance;
@@ -49,6 +50,28 @@ public class LevelManager : MonoBehaviour {
 			return _instance;
 		}
 	}
+
+	public void ChangeDifficulty(int difficulty) { //Takes 0=easy, 1=med,2=hard
+			if (player != null) {
+			this.difficulty = difficulty;
+			if (difficulty == 0) {
+				player.damageMult = player.damageMultEasy;
+				player.bombPartsNeeded = player.bombPartsNeededEasy;
+				spawning.spawnRateMin = spawning.spawnRateMinEasy;
+				spawning.spawnRateMax = spawning.spawnRateMaxEasy;
+			} else if (difficulty == 1) {
+				player.damageMult = player.damageMultMed;
+				player.bombPartsNeeded = player.bombPartsNeededMed;
+				spawning.spawnRateMin = spawning.spawnRateMinMed;
+				spawning.spawnRateMax = spawning.spawnRateMaxMed;
+			} else {
+				player.damageMult = player.damageMultHard;
+				player.bombPartsNeeded = player.bombPartsNeededHard;
+				spawning.spawnRateMin = spawning.spawnRateMinHard;
+				spawning.spawnRateMax = spawning.spawnRateMaxHard;
+			}
+				}
+		}
 
 	static T FindOrWarn<T>() where T : Object {
 		string name = typeof(T).Name;

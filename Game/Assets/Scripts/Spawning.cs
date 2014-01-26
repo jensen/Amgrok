@@ -17,9 +17,15 @@ public class Spawning : MonoBehaviour {
 	public Rect spawnZone = new Rect(-10, -10, 10, 10);
 
 	/// Determines minimum spawn delay
-	public float spawnRateMin = 1;
+	public float spawnRateMin = 1F;
+	public float spawnRateMinEasy = 1.4F;
+	public float spawnRateMinMed = 1F;
+	public float spawnRateMinHard = 0.7F;
 	/// Determines maximum spawn delay
-	public float spawnRateMax = 2;
+	public float spawnRateMax = 2F;
+	public float spawnRateMaxEasy = 2.8F;
+	public float spawnRateMaxMed = 2F;
+	public float spawnRateMaxHard = 1.4F;
 
 	private float _nextSpawn;
 	private Dictionary<char, Sprite> _spriteDict;

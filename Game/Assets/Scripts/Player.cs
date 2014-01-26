@@ -17,9 +17,16 @@ public class Player : MonoBehaviour {
 	public bool crazyFire = false;
 	public float craziness = .4F;
 	public float crazySpeedup = .5F;
+	public float damageMult = 1F;
+	public float damageMultEasy = 0.75F;
+	public float damageMultMed = 1F;
+	public float damageMultHard = 1.5F;
 	public int bomb = 0;
 	public int bombParts = 0;
-	public int bombPartsNeeded = 1;
+	public int bombPartsNeeded = 2;
+	public int bombPartsNeededEasy = 1;
+	public int bombPartsNeededMed = 2;
+	public int bombPartsNeededHard = 4;
 	public int maxBombs = 3;
 	public float health = 100;
 	public float maxHealth = 100;

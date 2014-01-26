@@ -39,7 +39,7 @@ public class EnemyManager : MonoBehaviour {
 		gameTime += Time.deltaTime;
 		if (gameTime > nextSpawnTime) {
 			nextSpawnTime += Random.Range (lowSpawnTime,highSpawnTime);
-			GameObject newObj = (GameObject)Instantiate (units[Random.Range (0,numSprites-1)], GetSpawnPosition(), Quaternion.identity); 
+			Instantiate (units[Random.Range (0,numSprites-1)], GetSpawnPosition(), Quaternion.identity); 
 
 				}
 	}
