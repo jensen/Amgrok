@@ -13,7 +13,7 @@ public class Player : MonoBehaviour {
 	public float horizSpeed = 10;
 	public float vertSpeed = 10;
 	public float fireDelay = 1;
-
+	public int bomb = 0;
 	public float health = 100;
 	public float maxHealth = 100;
 
@@ -102,6 +102,10 @@ public class Player : MonoBehaviour {
 						blt.direction = GetDirection () * (new Vector2 (Mathf.Sin (ang), Mathf.Cos (ang)));
 				}
 	}
+
+	void Bomb () {
+
+		}
 
 	public Quaternion GetDirection() {
 		return Quaternion.AngleAxis(shootingDirection * 90, new Vector3(0, 0, 1));
