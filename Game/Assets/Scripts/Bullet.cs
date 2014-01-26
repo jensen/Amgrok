@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour {
 	public float destroyTime = 5;
 
 	void Start () {
-		Destroy(this, destroyTime);
+		Destroy(gameObject, destroyTime);
 	}
 	
 	// Update is called once per frame

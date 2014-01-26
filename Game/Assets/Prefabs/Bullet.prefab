@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
   - 114: {fileID: 11400000}
-  - 135: {fileID: 13500000}
+  - 58: {fileID: 5800000}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -29,6 +29,17 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!58 &5800000
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .100000001
+  m_Center: {x: 0, y: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -37,22 +48,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a3b2c5cfcc21e458feebb7515a3018, type: 3}
+  m_Script: {fileID: 11500000, guid: b45a259202258e64890881eaa687de18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 20
---- !u!135 &13500000
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: .159999996
-  m_Center: {x: 0, y: 0, z: 0}
+  destroyTime: 5
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

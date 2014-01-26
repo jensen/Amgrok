@@ -35,6 +35,15 @@ public class Enemy : MonoBehaviour {
 		if (sprite != null) _sr.sprite = sprite;
 	}
 
+	void OnCollisionEnter2D(Collision2D c) {
+		var go = c.gameObject;
+		var blt = go.GetComponent<Bullet>();
+		var plr = go.GetComponent<Player>();
+
+		if (blt != null) gotShot = true;
+		if (plr != null) touchedPlayer = true;
+	}
+
 	void FixedUpdate() {
 		// if enemy is got shot by the player
 		if (gotShot) {
