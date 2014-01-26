@@ -324,7 +324,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: 4e01386c0f9c847bd89df4f72bc407fb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1990f14d64f69431b9cf2f9885fd216b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1231546253
 Transform:
@@ -349,8 +349,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instructions:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 1990f14d64f69431b9cf2f9885fd216b, type: 3}
+  - {fileID: 21300000, guid: 70d1d7ab92313454297c7feef9ef18a7, type: 3}
+  - {fileID: 21300000, guid: fbc27c41442044a6ca40ad36f42b2a55, type: 3}
+  - {fileID: 21300000, guid: 184dc99d27430432b9fb0c5ccde77437, type: 3}
   page: 0
