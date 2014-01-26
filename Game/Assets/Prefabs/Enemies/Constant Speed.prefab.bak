@@ -10,10 +10,9 @@ GameObject:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
   - 114: {fileID: 11400000}
-  - 114: {fileID: 11400002}
   - 58: {fileID: 5800000}
   m_Layer: 0
-  m_Name: Splitter
+  m_Name: Constant Speed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,20 +56,6 @@ MonoBehaviour:
   gotShot: 0
   touchedPlayer: 0
   borderBehavior: 1
---- !u!114 &11400002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdd63648496dd5b47ba72e7d879fafa8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delayedSplit: {fileID: 11400000, guid: db02cf5c3635ec44893c43135b6fc391, type: 2}
-  splitDelay: .200000003
-  splitSpeed: {x: 1.20000005, y: .5}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -92,7 +77,11 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: 465255e1d97d27445aef23d6dc5d1c33, type: 3}
+<<<<<<< HEAD
+  m_Sprite: {fileID: 21300000, guid: 112c26d5c142a764a9c24c022cdf2dfb, type: 3}
+=======
+  m_Sprite: {fileID: 21300000, guid: 063c83492efa23c40be9d0923d6f0b0b, type: 3}
+>>>>>>> 8bd80f742e8283305370dcbad6194cabf0d01dcc
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
