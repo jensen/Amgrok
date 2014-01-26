@@ -1,33 +1,34 @@
 ﻿using UnityEngine;
 
-public class TitleMenu : Menu {
-
+public class InstructionButtons : Menu {
+	
 	/// <summary>
 	/// Vertical pos of the menu relative to screen height. [0, 1]
 	/// </summary>
 	public float menuVertPos = 0.7f;
-
+	public Instructions ins;
+	public Rect rect = new Rect (.05f, .15f, .05f, .95f);
+	
 	public float bottomPadding = 0.05f;
-
+	
 	void OnGUI() {
-		GUI.skin = skin;
 
-		float margin = (Screen.width - buttonWidth) / 2;
-		GUILayout.BeginArea(new Rect(margin, menuVertPos * Screen.height,
-		                             Screen.width - 2 * margin, (1 - menuVertPos - bottomPadding) * Screen.height));
-		GUILayout.BeginVertical();
-		GUILayout.FlexibleSpace();
+		//rect = new Rect (rect.x * Screen.width, rect.y * Screen.height, rect.width * Screen.width, rect.height * Screen.height);
 
-		if (GUILayout.Button("Easy")) LoadWithDifficulty(0);
-		if (GUILayout.Button("Medium")) LoadWithDifficulty(1);
-		if (GUILayout.Button("Hard")) LoadWithDifficulty(2);
-		if (GUILayout.Button("Instructions")) Application.LoadLevel ("Instructions");
-		if (GUILayout.Button("Credits")) Application.LoadLevel("Credits");
-		if (GUILayout.Button("Quit")) Application.Quit();
-
-		GUILayout.EndVertical();
-		GUILayout.EndArea();
-
+		//GUI.skin = skin;
+		//GUILayout.BeginArea(rect);
+		//GUILayout.BeginHorizontal();
+		//GUILayout.FlexibleSpace();
+		GUILayout.BeginHorizontal("box");
+		if (GUILayout.Button("Back")) ins.Back();
+		if (GUILayout.Button("Main Menu")) Application.LoadLevel("Title");
+		if (GUILayout.Button("Forward")) ins.Forward();
+			GUILayout.EndHorizontal();
+		//}
+		
+		//GUILayout.EndHorizontal();
+		//GUILayout.EndArea();
+		
 		/*
 		if(GUI.Button (new Rect(screenCenter.x - buttonWidth/2, Screen.height - ((buttonHeight + buttonPadding) * 3), buttonWidth, buttonHeight), "Play"))
 		{
@@ -39,7 +40,7 @@ public class TitleMenu : Menu {
 			Application.Quit();
 		}*/
 	}
-
+	
 	void LoadWithDifficulty(int d) {
 		GameObject go = new GameObject("LoadWithDifficulty");
 		DontDestroyOnLoad(go);
