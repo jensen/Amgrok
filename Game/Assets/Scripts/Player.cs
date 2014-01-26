@@ -35,8 +35,8 @@ public class Player : MonoBehaviour {
 		}
 
 		float vert = vertInp * vertSpeed * Time.deltaTime;
-		float leftBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0)).x;
-		float rightBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0)).x;
+		float leftBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0)).x+1.6F;
+		float rightBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0)).x-.7F;
 		float topBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0)).y;
 		float bottomBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0)).y;
 		SpriteRenderer sr = GetComponent ("SpriteRenderer") as SpriteRenderer;
