@@ -7,12 +7,10 @@ using System.Collections.Generic;
 /// </summary>
 public class Spawning : MonoBehaviour {
 
-	public const int numSprites = 5;
+	public const int numEnemies = 5;
+	//public char[] charCodes = new char[5] {'A','B','C','D','E'};
 
-	public char[] charCodes = new char[5] {'A','B','C','D','E'};
-	public Sprite[] spriteSet = new Sprite[numSprites];
-
-	public GameObject[] units = new GameObject[numSprites];
+	public GameObject[] units = new GameObject[numEnemies];
 
 	public Rect spawnZone = new Rect(-10, -10, 10, 10);
 
@@ -32,12 +30,10 @@ public class Spawning : MonoBehaviour {
 
 	void Start() {
 
-		spriteSet = spriteSet.OrderBy(c => System.Guid.NewGuid()).ToArray();
-
-		_spriteDict = new Dictionary<char, Sprite>();
+		/*_spriteDict = new Dictionary<char, Sprite>();
 		for (int i = 0; i < charCodes.Length; i ++) {
 			_spriteDict.Add(charCodes[i], spriteSet[i]);
-		}
+		}*/
 
 		_nextSpawn = Time.time + GetSpawnInterval();
 	}
@@ -52,7 +48,7 @@ public class Spawning : MonoBehaviour {
 	/// Spawn the next enemy.
 	void Spawn() {
 		Debug.Log ("Spawn");
-		Instantiate(units[Random.Range(0, numSprites)], GetSpawnPosition(), Quaternion.identity); 
+		Instantiate(units[Random.Range(0, numEnemies)], GetSpawnPosition(), Quaternion.identity); 
 	}
 
 	/// Gets the position of the next spawn.
