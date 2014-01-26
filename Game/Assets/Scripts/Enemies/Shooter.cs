@@ -22,6 +22,18 @@ public class Shooter : MonoBehaviour {
 				}
 	}
 
+	void OnDestroyed () {
+		if (LevelManager.Instance.player != null) {
+			LevelManager.Instance.player.crazyFire = true;
+		}
+	}
+	
+	void OnTouchPlayer () {
+		if (LevelManager.Instance.player != null) {
+			LevelManager.Instance.player.crazyFire = false;
+		}
+	}
+
 	void Shoot() {
 		Instantiate (bullet, transform.position, Quaternion.identity); 
 	}

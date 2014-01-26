@@ -15,5 +15,11 @@ public class EnemyBullet : MonoBehaviour {
 	void Update () {
 		transform.position += (Vector3) (direction * (bulletSpeed * Time.deltaTime));
 	}
+	
+	void OnTouchPlayer () {
+		if (LevelManager.Instance.player != null) {
+			LevelManager.Instance.player.crazyFire = false;
+		}
+	}
 }
 

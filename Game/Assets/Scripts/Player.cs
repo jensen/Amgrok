@@ -14,6 +14,9 @@ public class Player : MonoBehaviour {
 	public float vertSpeed = 10;
 	public float fireDelay = 1;
 	public float bombDelay = 2;
+	public bool crazyFire = false;
+	public float craziness = .4F;
+	public float crazySpeedup = .5F;
 	public int bomb = 0;
 	public float health = 100;
 	public float maxHealth = 100;
@@ -46,7 +49,11 @@ public class Player : MonoBehaviour {
 
 		if (Input.GetKey (KeyCode.RightControl) || Input.GetKey(KeyCode.LeftControl) || Input.GetKey (KeyCode.Space) || Input.GetKey (KeyCode.Z)) {
 			if (Time.time > _nextFire) {
-				_nextFire = fireDelay + Time.time;
+				if (crazyFire) {
+					_nextFire = fireDelay * crazySpeedup + Time.time;
+				} else {
+					_nextFire = fireDelay + Time.time;
+				}
 				Shoot ();
 			}
 		}
@@ -106,10 +113,15 @@ public class Player : MonoBehaviour {
 	void Shoot () {
 		SoundEffectsManager.Instance.PlayShootSound();
 		for (int i = 1; i <= shotNumber; i++) {
-						var blt = (Bullet)Instantiate (bullet, transform.position, Quaternion.identity); 
-						float ang = -Mathf.PI / 4 + Mathf.PI / 2 * i / (shotNumber + 1);
-						blt.direction = GetDirection () * (new Vector2 (Mathf.Sin (ang), Mathf.Cos (ang)));
-				}
+			var blt = (Bullet)Instantiate (bullet, transform.position, Quaternion.identity); 
+			float ang;
+			if (crazyFire) {
+				 ang = -Mathf.PI / 4 + Mathf.PI / 2 * i / (shotNumber + 1) + Random.Range (-craziness,craziness);
+			} else {
+				ang = -Mathf.PI / 4 + Mathf.PI / 2 * i / (shotNumber + 1);
+			}
+			blt.direction = GetDirection () * (new Vector2 (Mathf.Sin (ang), Mathf.Cos (ang)));
+		}
 	}
 
 	void Bomb () {
