@@ -61,6 +61,7 @@ public class Enemy : MonoBehaviour {
 			Debug.Log ("Shot by player.");
 			if (shotsToKill == 1) {
 				ParticleEffectsManager.Instance.PlayExplosionEffect(gameObject.transform.position);
+				BroadcastMessage("OnDestroyed", SendMessageOptions.DontRequireReceiver);
 				Destroy(gameObject);
 				return;
 			} else if (shotsToKill > 1) {
@@ -123,6 +124,7 @@ public class Enemy : MonoBehaviour {
 	protected virtual void TouchPlayer() {
 		LevelManager.Instance.player.ReduceHealth(collisionDamage);
 		ParticleEffectsManager.Instance.PlayExplosionEffect(gameObject.transform.position);
+		BroadcastMessage("OnHitPlayer", SendMessageOptions.DontRequireReceiver);
 		Destroy(gameObject);
 	}
 }
