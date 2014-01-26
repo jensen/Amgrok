@@ -13,7 +13,8 @@ public class Player : MonoBehaviour {
 	public float horizSpeed = 10;
 	public float vertSpeed = 10;
 	public float fireDelay = 1;
-	public float bombDelay = 2;
+	public float bombReloadTime = 2;
+	public float bombDelay = 0.3F;
 	public bool crazyFire = false;
 	public float craziness = .4F;
 	public float crazySpeedup = .5F;
@@ -39,6 +40,8 @@ public class Player : MonoBehaviour {
 
 	private float _nextFire;
 	private float _nextBomb;
+	public bool _bombing;
+	private Vector3 _bomb_position;
 
 	void Start () {
 		var go = new GameObject(gameObject.name + " Sprite");
@@ -56,8 +59,13 @@ public class Player : MonoBehaviour {
 		float horizInp = Input.GetAxis ("Horizontal");
 		float horiz = horizInp * horizSpeed * Time.deltaTime;
 		float vertInp = Input.GetAxis ("Vertical");
-
+		if (_bombing && Time.time > _nextBomb) {
+			_bombing = false;
+			_nextBomb = bombReloadTime + Time.time;
+			Bomb ();
+		}
 		if (Input.GetKey (KeyCode.RightControl) || Input.GetKey(KeyCode.LeftControl) || Input.GetKey (KeyCode.Space) || Input.GetKey (KeyCode.Z)) {
+
 			if (Time.time > _nextFire) {
 				if (crazyFire) {
 					_nextFire = fireDelay * crazySpeedup + Time.time;
@@ -71,7 +79,8 @@ public class Player : MonoBehaviour {
 				if (Time.time > _nextBomb && bomb >= 1) {
 					bomb -= 1;
 					_nextBomb = bombDelay + Time.time;
-					Bomb ();
+					_bombing = true;
+					_bomb_position = transform.position;
 				}
 
 		}
@@ -152,7 +161,7 @@ public class Player : MonoBehaviour {
 		foreach (Enemy e in allEnemies) {
 			e.BombDestroy();
 				}
-		ParticleEffectsManager.Instance.PlayBombEffect (transform.position);
+		ParticleEffectsManager.Instance.PlayBombEffect (_bomb_position);
 		}
 
 	public Quaternion GetDirection() {
