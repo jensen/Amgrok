@@ -52,9 +52,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4689a10e146b9154ab34240fa5fe082c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxShotsToKill: 1
   collisionDamage: 15
   sprite: {fileID: 0}
-  speed: {x: 0, y: -1}
+  speed: {x: 0, y: -3}
   gotShot: 0
   touchedPlayer: 0
   borderBehavior: 1
@@ -93,7 +94,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: 5fd01b9e5dc8aa3459fd3154dba77479, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 063c83492efa23c40be9d0923d6f0b0b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
