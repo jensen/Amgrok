@@ -70,7 +70,7 @@ MonoBehaviour:
   maxShotsToKill: 1
   collisionDamage: 15
   sprite: {fileID: 0}
-  speed: {x: 4, y: 2}
+  speed: {x: 4, y: -2}
   gotShot: 0
   touchedPlayer: 0
   borderBehavior: 1
