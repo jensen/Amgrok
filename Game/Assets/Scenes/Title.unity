@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df801a524766604abf8c9ab3545d622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuVertPos: .699999988
+  menuVertPos: .0500000007
   bottomPadding: .0500000007
 --- !u!4 &370382365
 Transform:
