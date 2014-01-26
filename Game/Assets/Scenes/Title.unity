@@ -123,7 +123,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .10623917, g: .107816093, b: .110294104, a: .0196078438}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -181,6 +181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df801a524766604abf8c9ab3545d622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuVertPos: .699999988
+  bottomPadding: .0500000007
 --- !u!4 &370382365
 Transform:
   m_ObjectHideFlags: 0

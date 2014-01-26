@@ -7,14 +7,14 @@ public class TitleMenu : Menu {
 	/// </summary>
 	public float menuVertPos = 0.7f;
 
-	public float bottomPadding = 0.1f;
+	public float bottomPadding = 0.05f;
 
 	void OnGUI() {
 		GUI.skin = skin;
 
 		float margin = (Screen.width - buttonWidth) / 2;
 		GUILayout.BeginArea(new Rect(margin, menuVertPos * Screen.height,
-		                             Screen.width - 2 * margin, (1 - menuVertPos) * Screen.height));
+		                             Screen.width - 2 * margin, (1 - menuVertPos - bottomPadding) * Screen.height));
 		GUILayout.BeginVertical();
 		GUILayout.FlexibleSpace();
 
@@ -23,7 +23,6 @@ public class TitleMenu : Menu {
 		if (GUILayout.Button("Hard")) Application.LoadLevel("Main");
 		if (GUILayout.Button("Quit")) Application.Quit();
 
-		GUILayout.FlexibleSpace();
 		GUILayout.EndVertical();
 		GUILayout.EndArea();
 
