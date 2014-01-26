@@ -3,32 +3,41 @@ using System.Collections;
 
 public class InGameHUDScript : MonoBehaviour {
 	
-	public float displayHealth = 100;
+	private float displayHealth;
+	private float displayEnemyCount;
 
 	private GameObject healthBar;
-	//private GameObject nextEnemy;
+	private GameObject enemyCountBar;
 
 	private Vector3 healthScale;
+	private Vector3 enemyCountScale;
 
 	// Use this for initialization
 	void Start () {
 		healthScale = new Vector3(1.0f, 1.0f, 1.0f);
+		enemyCountScale = new Vector3(1.0f, 1.0f, 1.0f);
 
 		healthBar = GameObject.Find("HealthBar");
-		//nextEnemy = GameObject.Find("NextEnemy");
+		enemyCountBar = GameObject.Find("EnemyCountBar");
 
 		if(healthBar == null)
 		{
 			Debug.LogError("HealthBar doesn't exist.");
 		}
 
-		//SetHealth(20);
-		SetNextSpawnHint(1);
-		Change ();
+		if(enemyCountBar == null)
+		{
+			Debug.LogError("EnemyCountBar doesn't exist.");
+		}
+
+		displayHealth = LevelManager.Instance.player.maxHealth;
+		displayEnemyCount = LevelManager.Instance.spawning.spawnThreshold;
+
+		Change();
 	}
 
 	public void Change() {
-		BroadcastMessage ("ChangeHUDElement");
+		BroadcastMessage("ChangeHUDElement");
 	}
 	
 	// Update is called once per frame
@@ -44,15 +53,18 @@ public class InGameHUDScript : MonoBehaviour {
 			healthScale.x = displayHealth / maxHealth;
 			healthBar.transform.localScale = healthScale;
 		}
-	}
 
-	/*public void SetHealth(float h) {
-		targetHealth = h;
+		var spawner = LevelManager.Instance.spawning;
 
-		ParticleEffectsManager.Instance.PlayExplosionEffect(healthBar.transform.position);
-	}*/
+		float maxEnemyCount = spawner.spawnThreshold;
+		float currentEnemyCount = maxEnemyCount - spawner.spawnCount;
 
-	public void SetNextSpawnHint(int type) {
-
+		if (!Mathf.Approximately(displayEnemyCount, currentEnemyCount)) {
+			displayEnemyCount = Mathf.Lerp(displayEnemyCount, currentEnemyCount, 10 * Time.deltaTime);
+			
+			enemyCountScale.x = displayEnemyCount / maxEnemyCount;
+			Debug.Log (enemyCountScale.x);
+			enemyCountBar.transform.localScale = enemyCountScale;
+		}
 	}
 }
