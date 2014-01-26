@@ -16,10 +16,10 @@ public class BombPartIcon : MonoBehaviour {
 	void ChangeHUDElement () {
 		if (LevelManager.Instance.player.bombPartsNeeded == 1 || LevelManager.Instance.player.bombParts == 0) {
 			gameObject.GetComponent<SpriteRenderer>().sprite = emptyBomb;
-		} else if  (LevelManager.Instance.player.bombPartsNeeded == 4 || LevelManager.Instance.player.bombParts == 1) {
+		} else if  (LevelManager.Instance.player.bombPartsNeeded == 4 && LevelManager.Instance.player.bombParts == 1) {
 			gameObject.GetComponent<SpriteRenderer>().sprite = quarterBomb;
 
-		} else if  (LevelManager.Instance.player.bombPartsNeeded == 4 || LevelManager.Instance.player.bombParts == 3) {
+		} else if  (LevelManager.Instance.player.bombPartsNeeded == 4 && LevelManager.Instance.player.bombParts == 3) {
 			gameObject.GetComponent<SpriteRenderer>().sprite = threeQuarterBomb;
 			
 		} else {

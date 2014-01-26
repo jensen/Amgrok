@@ -1474,6 +1474,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 411033432}
   - 132: {fileID: 411033433}
+  - 114: {fileID: 411033434}
   m_Layer: 0
   m_Name: +
   m_TagString: Untagged
@@ -1515,6 +1516,17 @@ GUIText:
     rgba: 4294967295
   m_PixelCorrect: 1
   m_RichText: 1
+--- !u!114 &411033434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 411033431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f95dd32f346f64865b1fd4f44501f06f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &411478350
 GameObject:
   m_ObjectHideFlags: 0
@@ -1825,9 +1837,9 @@ MonoBehaviour:
   damageMultEasy: .75
   damageMultMed: 1
   damageMultHard: 1.5
-  bomb: 6
+  bomb: 0
   bombParts: 0
-  bombPartsNeeded: 1
+  bombPartsNeeded: 2
   bombPartsNeededEasy: 1
   bombPartsNeededMed: 2
   bombPartsNeededHard: 4
