@@ -26,9 +26,9 @@ public class Splitter : MonoBehaviour {
 				}
 	}
 
-	OnTouchPlayer() {
+	void OnTouchPlayer() {
 		if (LevelManager.Instance.player != null) {
-			LevelManager.Instance.player.shotNumber = ((int) Mathf.Ceil ((float) LevelManager.Instance.player.shotNumber)/2F;
+			LevelManager.Instance.player.shotNumber = ((int) Mathf.Ceil(((float) LevelManager.Instance.player.shotNumber)/2F));
 		}
 	}
 }
