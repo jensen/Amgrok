@@ -194,6 +194,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuVertPos: .699999988
   ins: {fileID: 1231546254}
+  rect:
+    serializedVersion: 2
+    x: .0500000007
+    y: .150000006
+    width: .0500000007
+    height: .949999988
   bottomPadding: .0500000007
 --- !u!1 &719206275
 GameObject:
