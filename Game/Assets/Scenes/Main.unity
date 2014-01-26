@@ -275,7 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tiltR: {fileID: 21300000, guid: ff119f828cb72ca43914f86e420557d0, type: 3}
   tiltL: {fileID: 21300000, guid: deb6c1e5690f48d47871cef32f872ea7, type: 3}
-  bullet: {fileID: 100000, guid: 27ce47b1fbd1cf543b93dac64e7bcef6, type: 2}
+  bullet: {fileID: 100000, guid: 276c93e2d7182324a9032860a7604406, type: 2}
   untilt: {fileID: 21300000, guid: fa89301ed9509134884632197ba48fea, type: 3}
   horizSpeed: 10
   vertSpeed: 10
