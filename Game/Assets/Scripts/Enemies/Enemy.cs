@@ -79,6 +79,9 @@ public class Enemy : MonoBehaviour {
 			BroadcastMessage("OnTouchPlayer", SendMessageOptions.DontRequireReceiver);
 
 			TouchPlayer();
+			if (LevelManager.Instance != null) {
+				LevelManager.Instance.hud.Change();
+			}
 
 			Debug.Log ("Touch player.");
 			//Destroy(gameObject);
