@@ -1793,9 +1793,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 369606630}
+  - {fileID: 1039050258}
   - {fileID: 1920605548}
   - {fileID: 319221183}
-  - {fileID: 1039050258}
   - {fileID: 935306480}
   - {fileID: 812249868}
   - {fileID: 1934461056}
@@ -1816,7 +1816,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a8247598865e3d4aa141659e88c09fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayHealth: 100
 --- !u!1 &754630977
 GameObject:
   m_ObjectHideFlags: 0
@@ -2032,7 +2031,7 @@ Transform:
 --- !u!1 &1039050257
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 100000, guid: 4b5ea8df8491c490ca5402a6dcc24d9a, type: 2}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
@@ -2040,7 +2039,7 @@ GameObject:
   - 212: {fileID: 1039050260}
   - 114: {fileID: 1039050259}
   m_Layer: 0
-  m_Name: Enemy5
+  m_Name: BombPartition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2049,18 +2048,19 @@ GameObject:
 --- !u!4 &1039050258
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 400000, guid: 4b5ea8df8491c490ca5402a6dcc24d9a, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1039050257}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .515035689, y: -4.18719912, z: 0}
+  m_LocalPosition: {x: .384984612, y: -4.15003681, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 705238794}
 --- !u!114 &1039050259
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 11400000, guid: 4b5ea8df8491c490ca5402a6dcc24d9a,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1039050257}
   m_Enabled: 1
@@ -2075,7 +2075,8 @@ MonoBehaviour:
 --- !u!212 &1039050260
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 21200000, guid: 4b5ea8df8491c490ca5402a6dcc24d9a,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1039050257}
   m_Enabled: 1
