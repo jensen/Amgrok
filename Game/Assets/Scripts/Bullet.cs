@@ -14,3 +14,4 @@ public class Bullet : MonoBehaviour {
 		transform.Translate (0, bulletSpeed * Time.deltaTime, 0);
 	}
 }
+
