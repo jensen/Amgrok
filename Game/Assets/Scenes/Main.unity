@@ -1736,11 +1736,11 @@ Prefab:
         type: 3}
     - target: {fileID: 11400000, guid: 5b7bc0517c510d34b8d1be7ec7097192, type: 2}
       propertyPath: spawnThreshold
-      value: 50
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5b7bc0517c510d34b8d1be7ec7097192, type: 2}
       propertyPath: killThreshold
-      value: 35
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b7bc0517c510d34b8d1be7ec7097192, type: 2}
@@ -4493,8 +4493,8 @@ MonoBehaviour:
   spawnRateMaxMed: 2
   spawnRateMaxHard: 1.39999998
   spawnCount: 0
-  spawnThreshold: 50
-  killThreshold: 35
+  spawnThreshold: 10
+  killThreshold: 5
 --- !u!4 &1407588126
 Transform:
   m_ObjectHideFlags: 0
