@@ -31,6 +31,14 @@ public class MovementReverser : MonoBehaviour {
 		//transform.position = new Vector3(Mathf.Clamp(transform.position.x, leftBorder, rightBorder), Mathf.Clamp(transform.position.y, topBorder, bottomBorder), transform.position.z);
 	}	
 
+	void OnDestroyed () {
+		if (LevelManager.Instance.player != null) {
+			LevelManager.Instance.player.bomb += 1F;
+			LevelManager.Instance.player.horizSpeed *= -1F;
+			LevelManager.Instance.player.vertSpeed *= -1F;
+		}
+	}
+
 	void OnCollisionEnter(Collision c) {
 		if (c.collider.gameObject.GetComponent<Bullet>() != null) {
 			DestroyImmediate(gameObject);
