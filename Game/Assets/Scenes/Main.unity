@@ -5122,7 +5122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   regularPosition: {x: 0, y: 0, z: 0}
   frequency: 60
-  amplitude: .200000003
+  amplitude: .5
   shakingTimer: 0
 --- !u!1 &1906125950
 GameObject:
