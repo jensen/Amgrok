@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FirstScreenScript : MonoBehaviour {
 
-	public float timeToSwitch = 1F;
+	public float timeToSwitch = 7F;
 	// Use this for initialization
 	void Start () {
 	
