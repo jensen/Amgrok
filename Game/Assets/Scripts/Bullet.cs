@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BulletMovement : MonoBehaviour {
+public class Bullet : MonoBehaviour {
 	public float bulletSpeed = 20;
 	public float destroyTime = 5;
 
