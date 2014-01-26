@@ -81,6 +81,7 @@ public class Player : MonoBehaviour {
 					bomb -= 1;
 					_nextBomb = bombDelay + Time.time;
 					_bombing = true;
+					LevelManager.Instance.hud.Change ();
 					_bomb_position = transform.position;
 				}
 
