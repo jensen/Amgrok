@@ -8,7 +8,7 @@ using System.Collections;
 public class PowerUp : Enemy {
 
 	void Awake() {
-		base.destroyOnShot = false;
+		base.shotsToKill = 0;
 	}
 
 	void OnTouchPlayer() {

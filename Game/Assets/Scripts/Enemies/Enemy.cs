@@ -12,8 +12,8 @@ public enum BorderBehavior {
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class Enemy : MonoBehaviour {
-	protected bool destroyOnShot = true;
-
+	protected int shotsToKill;
+	public int maxShotsToKill = 1;
 	public float collisionDamage = 15;
 	/// Change this field to change the enemy's sprite
 	public Sprite sprite;
@@ -36,6 +36,7 @@ public class Enemy : MonoBehaviour {
 	void Start() {
 		//gameObject.AddComponent<Rigidbody2D>();
 		//rigidbody2D.isKinematic = true;
+		shotsToKill = maxShotsToKill;
 	}
 
 	void Update() {
@@ -58,10 +59,14 @@ public class Enemy : MonoBehaviour {
 			BroadcastMessage("OnShotByPlayer", SendMessageOptions.DontRequireReceiver);
 
 			Debug.Log ("Shot by player.");
-			if (destroyOnShot) {
+			if (shotsToKill == 1) {
 				ParticleEffectsManager.Instance.PlayExplosionEffect(gameObject.transform.position);
 				Destroy(gameObject);
 				return;
+			} else if (shotsToKill > 1) {
+				shotsToKill --;
+				gameObject.GetComponent<SpriteRenderer>().color = new Color(1,1,1,((float) shotsToKill)/((float)maxShotsToKill)); //*= new Color(1F,1F,((float) shotsToKill)/(((float)shotsToKill)+1F));
+				gotShot = false;
 			}
 		}
 
