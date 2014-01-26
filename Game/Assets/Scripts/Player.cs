@@ -4,6 +4,8 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour {
 
+	public SpriteRenderer _spriteRenderer;
+
 	public Sprite tiltR;
 	public Sprite tiltL;
 	public Bullet bullet; 
@@ -23,7 +25,14 @@ public class Player : MonoBehaviour {
 	private float _nextFire;
 
 	void Start () {
+		var go = new GameObject(gameObject.name + " Sprite");
 
+		go.transform.parent = transform;
+		go.transform.localPosition = Vector3.zero;
+		go.transform.localRotation = Quaternion.identity;
+		go.transform.localScale = Vector3.one;
+
+		_spriteRenderer = go.AddComponent<SpriteRenderer>();
 	}
 	
 	// Update is called once per frame
@@ -45,20 +54,21 @@ public class Player : MonoBehaviour {
 		float rightBorder = LevelManager.Instance.levelBounds.xMax;
 		float topBorder = LevelManager.Instance.levelBounds.yMin;
 		float bottomBorder = LevelManager.Instance.levelBounds.yMax;
-		SpriteRenderer sr = GetComponent ("SpriteRenderer") as SpriteRenderer;
+		//SpriteRenderer sr = GetComponent ("SpriteRenderer") as SpriteRenderer;
 
 		if (horiz < 0) {
-			sr.sprite = tiltL;
+			_spriteRenderer.sprite = tiltL;
 		} else if (horiz > 0) {
-			sr.sprite = tiltR;
+			_spriteRenderer.sprite = tiltR;
 		} else {
-			sr.sprite = untilt;
+			_spriteRenderer.sprite = untilt;
 		}
 
 		transform.Translate (horiz, 0, 0);
 		transform.Translate (0, vert, 0);
 		transform.position = new Vector3(Mathf.Clamp(transform.position.x, leftBorder, rightBorder), Mathf.Clamp(transform.position.y, topBorder, bottomBorder), transform.position.z);
 
+		_spriteRenderer.gameObject.transform.rotation = GetDirection();
 	}
 
 	public void AddHealth(float amount) {
@@ -85,7 +95,11 @@ public class Player : MonoBehaviour {
 	void Shoot () {
 		SoundEffectsManager.Instance.PlayShootSound();
 		var blt = (Bullet) Instantiate (bullet, transform.position, Quaternion.identity); 
-		blt.direction = Quaternion.AngleAxis(shootingDirection * 90, new Vector3(0, 0, 1)) * Vector2.up;
+		blt.direction = GetDirection() * Vector2.up;
+	}
+
+	public Quaternion GetDirection() {
+		return Quaternion.AngleAxis(shootingDirection * 90, new Vector3(0, 0, 1));
 	}
 
 	public void RotateRight() {
