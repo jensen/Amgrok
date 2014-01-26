@@ -62,6 +62,7 @@ public class Enemy : MonoBehaviour {
 			if (shotsToKill == 1) {
 				ParticleEffectsManager.Instance.PlayExplosionEffect(gameObject.transform.position);
 				BroadcastMessage("OnDestroyed", SendMessageOptions.DontRequireReceiver);
+				LevelManager.Instance.player.killCount += 1;
 				Destroy(gameObject);
 				if (LevelManager.Instance != null) {
 					LevelManager.Instance.hud.Change();

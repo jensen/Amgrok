@@ -16,6 +16,7 @@ public class Player : MonoBehaviour {
 	public float bombReloadTime = 2;
 	public float bombDelay = 0.3F;
 	public bool crazyFire = false;
+	public int killCount = 0;
 	public float craziness = .4F;
 	public float crazySpeedup = .5F;
 	public float damageMult = 1F;

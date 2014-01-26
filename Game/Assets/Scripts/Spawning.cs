@@ -24,6 +24,8 @@ public class Spawning : MonoBehaviour {
 	public float spawnRateMaxEasy = 2.8F;
 	public float spawnRateMaxMed = 2F;
 	public float spawnRateMaxHard = 1.4F;
+	public int spawnCount = 0;
+	public int spawnThreshold = 100;
 
 	private float _nextSpawn;
 	private Dictionary<char, Sprite> _spriteDict;
@@ -48,7 +50,11 @@ public class Spawning : MonoBehaviour {
 	/// Spawn the next enemy.
 	void Spawn() {
 		Debug.Log ("Spawn");
-		Instantiate(units[Random.Range(0, numEnemies)], GetSpawnPosition(), Quaternion.identity); 
+		Instantiate(units[Random.Range(0, numEnemies)], GetSpawnPosition(), Quaternion.identity);
+		spawnCount ++;
+		if (spawnCount > spawnThreshold) {
+			//end Game
+				}
 	}
 
 	/// Gets the position of the next spawn.
