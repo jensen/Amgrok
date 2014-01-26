@@ -14,7 +14,7 @@ public class GameOverMenu : Menu {
 		
 		if(GUI.Button (new Rect(screenCenter.x - buttonWidth/2, screenCenter.y + buttonHeight + buttonPadding, buttonWidth, buttonHeight), "Quit"))
 		{
-			Application.LoadLevel("Menu");
+			Application.LoadLevel("Title");
 		}
 	}
 }

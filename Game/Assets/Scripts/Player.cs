@@ -67,7 +67,19 @@ public class Player : MonoBehaviour {
 
 	public void ReduceHealth(float amount) {
 		health = Mathf.Clamp(health - amount, 0, maxHealth);
-		SoundEffectsManager.Instance.PlayHitSound();
+		if(health <= 0.0f)
+		{
+			SoundEffectsManager.Instance.PlayDeathSound();
+			ParticleEffectsManager.Instance.PlayExplosionEffect(transform.position);
+
+			// Show end screen.
+			transform.parent.gameObject.AddComponent<GameOverMenu>();
+			DestroyObject(gameObject);
+		}
+		else
+		{
+			SoundEffectsManager.Instance.PlayHitSound();
+		}
 	}
 
 	void Shoot () {
