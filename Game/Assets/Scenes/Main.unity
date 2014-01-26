@@ -1367,6 +1367,7 @@ MonoBehaviour:
   health: 50
   maxHealth: 100
   shootingDirection: 0
+  shotNumber: 1
 --- !u!4 &445680469
 Transform:
   m_ObjectHideFlags: 0
@@ -1760,7 +1761,7 @@ MonoBehaviour:
   regularPosition: {x: 0, y: 0, z: 0}
   frequency: 60
   amplitude: .200000003
-  shaking: 0
+  shakingTimer: 0
 --- !u!1 &1906125950
 GameObject:
   m_ObjectHideFlags: 0
