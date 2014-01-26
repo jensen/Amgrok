@@ -37,6 +37,12 @@ public class Spawning : MonoBehaviour {
 			var e = units[i];
 
 			e.GetComponent<SpriteRenderer>().sprite = spriteSet[i];
+
+			GameObject go = new GameObject();
+			var sr = go.AddComponent<SpriteRenderer>();
+			sr.sprite = spriteSet[i];
+			go.transform.position = new Vector3(-4.6F,1.2F-0.6F*i,0F);
+			go.transform.localScale = new Vector3(.25F,.25F,.25F);
 		}
 
 		_nextSpawn = Time.time + GetSpawnInterval();
