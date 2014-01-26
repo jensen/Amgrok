@@ -38,9 +38,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 466dea49ace95624894693146188497a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySet:
-  - {fileID: 11400000, guid: 44eff360ab5639a49af06569b4974de2, type: 2}
-  - {fileID: 11400000, guid: 378aea4ecec96054a80571f435366274, type: 2}
+  units:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   spawnZone:
     serializedVersion: 2
     x: -4
@@ -48,7 +51,16 @@ MonoBehaviour:
     width: 8
     height: 4
   spawnRateMin: 1
+  spawnRateMinEasy: 1.39999998
+  spawnRateMinMed: 1
+  spawnRateMinHard: .699999988
   spawnRateMax: 2
+  spawnRateMaxEasy: 2.79999995
+  spawnRateMaxMed: 2
+  spawnRateMaxHard: 1.39999998
+  spawnCount: 0
+  spawnThreshold: 3
+  killThreshold: 100
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

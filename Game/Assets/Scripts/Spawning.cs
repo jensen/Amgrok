@@ -50,7 +50,11 @@ public class Spawning : MonoBehaviour {
 
 	/// Spawn the next enemy.
 	void Spawn() {
-		Debug.Log ("Spawn");
+		if(LevelManager.Instance.player == null)
+		{
+			return;
+		}
+
 		Instantiate(units[Random.Range(0, numEnemies)], GetSpawnPosition(), Quaternion.identity);
 		spawnCount++;
 

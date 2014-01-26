@@ -59,11 +59,10 @@ public class InGameHUDScript : MonoBehaviour {
 		float maxEnemyCount = spawner.spawnThreshold;
 		float currentEnemyCount = maxEnemyCount - spawner.spawnCount;
 
-		if (!Mathf.Approximately(displayEnemyCount, currentEnemyCount)) {
+		if (!Mathf.Approximately(displayEnemyCount, currentEnemyCount) && player != null) {
 			displayEnemyCount = Mathf.Lerp(displayEnemyCount, currentEnemyCount, 10 * Time.deltaTime);
 			
 			enemyCountScale.x = displayEnemyCount / maxEnemyCount;
-			Debug.Log (enemyCountScale.x);
 			enemyCountBar.transform.localScale = enemyCountScale;
 		}
 	}
