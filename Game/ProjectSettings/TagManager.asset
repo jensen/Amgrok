@@ -49,3 +49,7 @@ TagManager:
     userID: 2
     uniqueID: 2587316499
     locked: 0
+  - name: Legend
+    userID: 3
+    uniqueID: 1932250781
+    locked: 0
