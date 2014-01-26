@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof(Enemy))]
@@ -32,7 +32,7 @@ public class MovementReverser : MonoBehaviour {
 	}	
 
 	void OnCollisionEnter(Collision c) {
-		if (c.collider.gameObject.GetComponent<BulletMovement>() != null) {
+		if (c.collider.gameObject.GetComponent<Bullet>() != null) {
 			DestroyImmediate(gameObject);
 		}
 	}
