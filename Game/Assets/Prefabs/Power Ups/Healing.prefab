@@ -69,7 +69,6 @@ MonoBehaviour:
   gotShot: 0
   touchedPlayer: 0
   borderBehavior: 1
-  amount: 25
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
