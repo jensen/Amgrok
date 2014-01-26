@@ -121,6 +121,12 @@ public class Enemy : MonoBehaviour {
 		}
 	}
 
+	
+	
+	public void BombDestroy() {
+		DestroyImmediate(gameObject);
+	}
+
 	protected virtual void TouchPlayer() {
 		LevelManager.Instance.player.ReduceHealth(collisionDamage);
 		ParticleEffectsManager.Instance.PlayExplosionEffect(gameObject.transform.position);

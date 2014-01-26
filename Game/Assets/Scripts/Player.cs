@@ -13,6 +13,7 @@ public class Player : MonoBehaviour {
 	public float horizSpeed = 10;
 	public float vertSpeed = 10;
 	public float fireDelay = 1;
+	public float bombDelay = 2;
 	public int bomb = 0;
 	public float health = 100;
 	public float maxHealth = 100;
@@ -24,6 +25,7 @@ public class Player : MonoBehaviour {
 	public int shotNumber = 1;
 
 	private float _nextFire;
+	private float _nextBomb;
 
 	void Start () {
 		var go = new GameObject(gameObject.name + " Sprite");
@@ -43,11 +45,19 @@ public class Player : MonoBehaviour {
 		float vertInp = Input.GetAxis ("Vertical");
 		float fireInp = Input.GetAxis ("Fire1");
 
-		if (Input.GetKey (KeyCode.RightControl) || Input.GetKey(KeyCode.LeftControl) || Input.GetKey (KeyCode.Space)) {
+		if (Input.GetKey (KeyCode.RightControl) || Input.GetKey(KeyCode.LeftControl) || Input.GetKey (KeyCode.Space) || Input.GetKey (KeyCode.Z)) {
 			if (Time.time > _nextFire) {
 				_nextFire = fireDelay + Time.time;
 				Shoot ();
 			}
+		}
+		if (Input.GetKey (KeyCode.X) || Input.GetKey(KeyCode.LeftShift) || Input.GetKey (KeyCode.RightShift)) {
+				if (Time.time > _nextBomb && bomb >= 1) {
+					bomb -= 1;
+					_nextBomb = bombDelay + Time.time;
+					Bomb ();
+				}
+
 		}
 
 		float vert = vertInp * vertSpeed * Time.deltaTime;
@@ -104,7 +114,10 @@ public class Player : MonoBehaviour {
 	}
 
 	void Bomb () {
-
+		Enemy[] allEnemies = FindObjectsOfType<Enemy>() as Enemy[];
+		foreach (Enemy e in allEnemies) {
+			e.BombDestroy();
+				}
 		}
 
 	public Quaternion GetDirection() {
