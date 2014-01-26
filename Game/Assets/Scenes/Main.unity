@@ -356,7 +356,7 @@ ParticleSystem:
     radius: 5.19999981
     angle: 13.1899996
     length: 5
-    boxX: 10
+    boxX: 16.0247192
     boxY: 1
     boxZ: 1
     placementMode: 0
