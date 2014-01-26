@@ -18,8 +18,6 @@ public class Enemy : MonoBehaviour {
 	public Sprite sprite;
 	/// Speed of the enemy
 	public Vector2 speed = new Vector2(0, -1);
-	/// Radius of the bounds
-	public float boundRadius = 2;
 	/// Set if true if this enemy got shot
 	public bool gotShot = false;
 
