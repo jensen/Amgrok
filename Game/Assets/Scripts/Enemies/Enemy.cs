@@ -31,11 +31,16 @@ public class Enemy : MonoBehaviour {
 		_sr = GetComponent<SpriteRenderer>();
 	}
 
+	void Start() {
+		gameObject.AddComponent<Rigidbody2D>();
+		rigidbody2D.isKinematic = true;
+	}
+
 	void Update() {
 		if (sprite != null) _sr.sprite = sprite;
 	}
 
-	void OnCollisionEnter2D(Collision2D c) {
+	void OnTriggerEnter2D(Collider2D c) {
 		var go = c.gameObject;
 		var blt = go.GetComponent<Bullet>();
 		var plr = go.GetComponent<Player>();
