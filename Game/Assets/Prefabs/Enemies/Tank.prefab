@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: .5
+  healAmount: 15
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -64,6 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4689a10e146b9154ab34240fa5fe082c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxShotsToKill: 10
   collisionDamage: 15
   sprite: {fileID: 0}
   speed: {x: 0, y: -.5}
