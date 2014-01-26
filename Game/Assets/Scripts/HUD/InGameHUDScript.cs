@@ -24,6 +24,11 @@ public class InGameHUDScript : MonoBehaviour {
 
 		//SetHealth(20);
 		SetNextSpawnHint(1);
+		Change ();
+	}
+
+	public void Change() {
+		BroadcastMessage ("ChangeHUDElement");
 	}
 	
 	// Update is called once per frame

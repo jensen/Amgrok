@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour {
 	/// Boundaries of the level
 	public Rect levelBounds;
 	public int difficulty;
+	public InGameHUDScript hud;
 
 	private static bool _onDestroy = false;
 	private static LevelManager _instance;
