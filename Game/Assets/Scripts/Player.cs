@@ -77,6 +77,7 @@ public class Player : MonoBehaviour {
 	}
 
 	public void ReduceHealth(float amount) {
+		ScreenShake.Instance.shakingTimer = 0.2f;
 		health = Mathf.Clamp(health - amount, 0, maxHealth);
 		if(health <= 0.0f)
 		{
