@@ -65,6 +65,19 @@ public class LevelManager : MonoBehaviour {
 		spawning.spawnRateMax *= spawning.spawnRateMaxEndlessIncrement; //* for ones that decrease, + for increase.
 		}
 
+
+	public void EndlessRestart() {	
+		endless = true;
+		player.damageMult = player.damageMultEndless;
+		player.bombPartsNeeded = player.bombPartsNeededEndless;
+		shooter.maxShotDelay = shooter.maxShotDelayEndless;
+		shooter.minShotDelay = shooter.minShotDelayEndless;
+		Enemy.speedMultiplier = Enemy.speedMultiplierEndless;
+		spawning.spawnRateMin = spawning.spawnRateMinEndless;
+		spawning.spawnRateMax = spawning.spawnRateMaxEndless;
+		spawning.spawnThreshold = spawning.spawnThresholdEndless;
+	}
+
 	public void ChangeDifficulty(int difficulty) { //Takes 1=easy, 2=med,3=hard, 0=endless (not implemented)
 			if (player != null) {
 			this.difficulty = difficulty;
