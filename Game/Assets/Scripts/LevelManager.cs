@@ -62,7 +62,7 @@ public class LevelManager : MonoBehaviour {
 		shooter.minShotDelay *= shooter.minShotDelayEndlessIncrement;
 		Enemy.speedMultiplier += Enemy.speedMultiplierEndlessIncrement;
 		spawning.spawnRateMin *= spawning.spawnRateMinEndlessIncrement;
-		spawning.spawnRateMax *= spawning.spawnRateMaxEndlessIncrement;
+		spawning.spawnRateMax *= spawning.spawnRateMaxEndlessIncrement; //* for ones that decrease, + for increase.
 		}
 
 	public void ChangeDifficulty(int difficulty) { //Takes 1=easy, 2=med,3=hard, 0=endless (not implemented)
@@ -77,6 +77,7 @@ public class LevelManager : MonoBehaviour {
 				Enemy.speedMultiplier = Enemy.speedMultiplierEndless;
 				spawning.spawnRateMin = spawning.spawnRateMinEndless;
 				spawning.spawnRateMax = spawning.spawnRateMaxEndless;
+				spawning.spawnThreshold = spawning.spawnThresholdEndless;
 			}else if (difficulty == 1) {
 				player.damageMult = player.damageMultEasy;
 				player.bombPartsNeeded = player.bombPartsNeededEasy;
@@ -85,6 +86,7 @@ public class LevelManager : MonoBehaviour {
 				Enemy.speedMultiplier = Enemy.speedMultiplierEasy;
 				spawning.spawnRateMin = spawning.spawnRateMinEasy;
 				spawning.spawnRateMax = spawning.spawnRateMaxEasy;
+				spawning.spawnThreshold = spawning.spawnThresholdEasy;
 			} else if (difficulty == 2) {
 				player.damageMult = player.damageMultMed;
 				player.bombPartsNeeded = player.bombPartsNeededMed;
@@ -93,6 +95,7 @@ public class LevelManager : MonoBehaviour {
 				Enemy.speedMultiplier = Enemy.speedMultiplierMed;
 				spawning.spawnRateMin = spawning.spawnRateMinMed;
 				spawning.spawnRateMax = spawning.spawnRateMaxMed;
+				spawning.spawnThreshold = spawning.spawnThresholdMed;
 			} else {
 				player.damageMult = player.damageMultHard;
 				player.bombPartsNeeded = player.bombPartsNeededHard;
@@ -101,6 +104,7 @@ public class LevelManager : MonoBehaviour {
 				Enemy.speedMultiplier = Enemy.speedMultiplierHard;
 				spawning.spawnRateMin = spawning.spawnRateMinHard;
 				spawning.spawnRateMax = spawning.spawnRateMaxHard;
+				spawning.spawnThreshold = spawning.spawnThresholdHard;
 			}
 				}
 		}

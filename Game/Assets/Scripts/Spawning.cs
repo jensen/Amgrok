@@ -28,6 +28,7 @@ public class Spawning : MonoBehaviour {
 	public float spawnRateMaxHard = 1.4F;
 	public float spawnRateMaxEndless = 2F;
 	public float spawnRateMaxEndlessIncrement = 0.9F;
+	public int tempSpawnCount = 0; //Only different in Endless, where it resets every level.
 	public int spawnCount = 0;
 	public int spawnThreshold = 100;
 	public int spawnThresholdEasy = 50;
@@ -65,10 +66,12 @@ public class Spawning : MonoBehaviour {
 
 		Instantiate(units[Random.Range(0, numEnemies)], GetSpawnPosition(), Quaternion.identity);
 		spawnCount++;
+		tempSpawnCount++;
 
-		if (spawnCount > spawnThreshold) {
+		if (tempSpawnCount > spawnThreshold) {
 			if (LevelManager.Instance.endless) {
 				LevelManager.Instance.EndlessUpgrade();
+				tempSpawnCount = 0;
 			} else if (LevelManager.Instance.player.killCount > killThreshold) {
 				Application.LoadLevel("Violent");
 			} else {

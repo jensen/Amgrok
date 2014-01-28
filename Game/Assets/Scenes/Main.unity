@@ -1742,6 +1742,14 @@ Prefab:
       propertyPath: killThreshold
       value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5b7bc0517c510d34b8d1be7ec7097192, type: 2}
+      propertyPath: spawnRateMinEndless
+      value: 1.39999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5b7bc0517c510d34b8d1be7ec7097192, type: 2}
+      propertyPath: spawnRateMaxEndless
+      value: 2.79999995
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b7bc0517c510d34b8d1be7ec7097192, type: 2}
   m_RootGameObject: {fileID: 1407588124}
@@ -4491,13 +4499,13 @@ MonoBehaviour:
   spawnRateMinEasy: 1.39999998
   spawnRateMinMed: 1
   spawnRateMinHard: .699999988
-  spawnRateMinEndless: 1
+  spawnRateMinEndless: 1.39999998
   spawnRateMinEndlessIncrement: .899999976
   spawnRateMax: 2
   spawnRateMaxEasy: 2.79999995
   spawnRateMaxMed: 2
   spawnRateMaxHard: 1.39999998
-  spawnRateMaxEndless: 2
+  spawnRateMaxEndless: 2.79999995
   spawnRateMaxEndlessIncrement: .899999976
   spawnCount: 0
   spawnThreshold: 50

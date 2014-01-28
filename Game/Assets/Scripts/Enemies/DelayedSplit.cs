@@ -17,7 +17,7 @@ public class DelayedSplit : MonoBehaviour {
 		left.speed = splitSpeed * (new Vector2 (Mathf.Cos (splitAngle), Mathf.Sin (splitAngle)));
 
 		var right = (Enemy) Instantiate(prefab, transform.position, transform.rotation);
-		left.speed = splitSpeed * (new Vector2(-Mathf.Cos (splitAngle), -Mathf.Sin (splitAngle)));
+		right.speed = splitSpeed * (new Vector2(-Mathf.Cos (splitAngle), -Mathf.Sin (splitAngle)));
 
 		/*
 		var left = (Enemy) Instantiate(prefab, transform.position, transform.rotation);
