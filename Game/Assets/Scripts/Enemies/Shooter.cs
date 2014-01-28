@@ -3,13 +3,19 @@ using System.Collections;
 
 public class Shooter : MonoBehaviour {
 
-	public float minShotDelay = 2F;
-	public float maxShotDelay = 4F;
+	public float minShotDelay = 1F;
+	public float maxShotDelay = 1.5F;
+	public float minShotDelayEasy = 1F;
+	public float maxShotDelayEasy = 1.5F;
+	public float minShotDelayMed = .5F;
+	public float maxShotDelayMed = 1F;
+	public float minShotDelayHard = .25F;
+	public float maxShotDelayHard = .5F;
 	public float timeTillShot = 3F;
 	public EnemyBullet bullet;
 	// Use this for initialization
 	void Start () {
-	
+		timeTillShot = Random.Range (minShotDelay,maxShotDelay);
 	}
 	
 	// Update is called once per frame

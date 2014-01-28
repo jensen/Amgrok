@@ -13,6 +13,7 @@ using System.Collections;
 public class LevelManager : MonoBehaviour {
 	public Player player;
 	public Spawning spawning;
+	public Shooter shooter;
 	/// Boundaries of the level
 	public Rect levelBounds;
 	public int difficulty;
@@ -52,22 +53,31 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 
-	public void ChangeDifficulty(int difficulty) { //Takes 0=easy, 1=med,2=hard
+	public void ChangeDifficulty(int difficulty) { //Takes 1=easy, 2=med,3=hard, 0=endless (not implemented)
 			if (player != null) {
 			this.difficulty = difficulty;
-			if (difficulty == 0) {
+			if (difficulty == 1) {
 				player.damageMult = player.damageMultEasy;
 				player.bombPartsNeeded = player.bombPartsNeededEasy;
+				shooter.maxShotDelay = shooter.maxShotDelayEasy;
+				shooter.minShotDelay = shooter.minShotDelayEasy;
+				Enemy.speedMultiplier = Enemy.speedMultiplierEasy;
 				spawning.spawnRateMin = spawning.spawnRateMinEasy;
 				spawning.spawnRateMax = spawning.spawnRateMaxEasy;
-			} else if (difficulty == 1) {
+			} else if (difficulty == 2) {
 				player.damageMult = player.damageMultMed;
 				player.bombPartsNeeded = player.bombPartsNeededMed;
+				shooter.maxShotDelay = shooter.maxShotDelayMed;
+				shooter.minShotDelay = shooter.minShotDelayMed;
+				Enemy.speedMultiplier = Enemy.speedMultiplierMed;
 				spawning.spawnRateMin = spawning.spawnRateMinMed;
 				spawning.spawnRateMax = spawning.spawnRateMaxMed;
 			} else {
 				player.damageMult = player.damageMultHard;
 				player.bombPartsNeeded = player.bombPartsNeededHard;
+				shooter.maxShotDelay = shooter.maxShotDelayHard;
+				shooter.minShotDelay = shooter.minShotDelayHard;
+				Enemy.speedMultiplier = Enemy.speedMultiplierHard;
 				spawning.spawnRateMin = spawning.spawnRateMinHard;
 				spawning.spawnRateMax = spawning.spawnRateMaxHard;
 			}

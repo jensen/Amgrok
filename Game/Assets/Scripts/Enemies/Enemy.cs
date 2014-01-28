@@ -15,6 +15,10 @@ public class Enemy : MonoBehaviour {
 	protected int shotsToKill;
 	public int maxShotsToKill = 1;
 	public float collisionDamage = 15;
+	static public float speedMultiplier = 1F;
+	static public float speedMultiplierEasy = 0.8F;
+	static public float speedMultiplierMed = 1F;
+	static public float speedMultiplierHard = 1.2F;
 	/// Change this field to change the enemy's sprite
 	public Sprite sprite;
 	/// Speed of the enemy
@@ -98,7 +102,7 @@ public class Enemy : MonoBehaviour {
 		
 		
 		// update position
-		transform.position += (Vector3) speed * Time.fixedDeltaTime;
+		transform.position += (Vector3) speed * speedMultiplier * Time.fixedDeltaTime;
 
 		if (transform.position.x <= xMin
 		    || transform.position.x >= xMax) {
@@ -115,8 +119,8 @@ public class Enemy : MonoBehaviour {
 		}
 		transform.position = new Vector2(
 			Mathf.Clamp(transform.position.x,
-		            xMin + Mathf.Abs (speed.x) * Time.deltaTime,
-		            xMax - Mathf.Abs (speed.x) * Time.deltaTime),
+		            xMin + Mathf.Abs (speed.x) * speedMultiplier * Time.deltaTime,
+		            xMax - Mathf.Abs (speed.x) * speedMultiplier * Time.deltaTime),
 			transform.position.y);
 
 		// enemy has reached bottom?

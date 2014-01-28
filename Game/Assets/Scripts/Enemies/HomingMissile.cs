@@ -39,13 +39,8 @@ public class HomingMissile : MonoBehaviour {
 			Destroy(gameObject);
 				}
 		if (LevelManager.Instance.player != null) {
-						Vector3 relative = (LevelManager.Instance.player.transform.position - transform.position);
-
-						if (relative.magnitude < speed * Time.deltaTime) {
-								_enemy.speed = speed * relative;
-						} else {
+						Vector2 relative = (LevelManager.Instance.player.transform.position - transform.position);
 								_enemy.speed = speed * relative.normalized;
-						}
 				}
 	}
 }
