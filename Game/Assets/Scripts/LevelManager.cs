@@ -79,6 +79,7 @@ public class LevelManager : MonoBehaviour {
 		spawning.spawnRateMin = spawning.spawnRateMinEndless;
 		spawning.spawnRateMax = spawning.spawnRateMaxEndless;
 		spawning.spawnThreshold = spawning.spawnThresholdEndless;
+		spawning.killThreshold = spawning.killThresholdEndless;
 		level = 0;
 	}
 
@@ -95,6 +96,7 @@ public class LevelManager : MonoBehaviour {
 				spawning.spawnRateMin = spawning.spawnRateMinEndless;
 				spawning.spawnRateMax = spawning.spawnRateMaxEndless;
 				spawning.spawnThreshold = spawning.spawnThresholdEndless;
+				spawning.killThreshold = spawning.killThresholdEndless;
 			}else if (difficulty == 1) {
 				player.damageMult = player.damageMultEasy;
 				player.bombPartsNeeded = player.bombPartsNeededEasy;
@@ -104,6 +106,7 @@ public class LevelManager : MonoBehaviour {
 				spawning.spawnRateMin = spawning.spawnRateMinEasy;
 				spawning.spawnRateMax = spawning.spawnRateMaxEasy;
 				spawning.spawnThreshold = spawning.spawnThresholdEasy;
+				spawning.killThreshold = spawning.killThresholdEasy;
 			} else if (difficulty == 2) {
 				player.damageMult = player.damageMultMed;
 				player.bombPartsNeeded = player.bombPartsNeededMed;
@@ -113,6 +116,7 @@ public class LevelManager : MonoBehaviour {
 				spawning.spawnRateMin = spawning.spawnRateMinMed;
 				spawning.spawnRateMax = spawning.spawnRateMaxMed;
 				spawning.spawnThreshold = spawning.spawnThresholdMed;
+				spawning.killThreshold = spawning.killThresholdMed;
 			} else {
 				player.damageMult = player.damageMultHard;
 				player.bombPartsNeeded = player.bombPartsNeededHard;
@@ -122,6 +126,7 @@ public class LevelManager : MonoBehaviour {
 				spawning.spawnRateMin = spawning.spawnRateMinHard;
 				spawning.spawnRateMax = spawning.spawnRateMaxHard;
 				spawning.spawnThreshold = spawning.spawnThresholdHard;
+				spawning.killThreshold = spawning.killThresholdHard;
 			}
 				}
 		}

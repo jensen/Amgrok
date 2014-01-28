@@ -30,12 +30,16 @@ public class Spawning : MonoBehaviour {
 	public float spawnRateMaxEndlessIncrement = 0.9F;
 	public int tempSpawnCount = 0; //Only different in Endless, where it resets every level.
 	public int spawnCount = 0;
-	public int spawnThreshold = 100;
+	public int spawnThreshold = 70;
 	public int spawnThresholdEasy = 50;
 	public int spawnThresholdMed = 70;
 	public int spawnThresholdHard = 100; //These are designed to keep game length the same in spite off differing spawn rate
 	public int spawnThresholdEndless = 15; //Time per difficulty increase.
-	public int killThreshold = 100;
+	public int killThreshold = 49;
+	public int killThresholdEasy = 35;
+	public int killThresholdMed = 49;
+	public int killThresholdHard = 70;
+	public int killThresholdEndless = 100; //Doesn't actually do anything.
 
 	private float _nextSpawn;
 	private Dictionary<char, Sprite> _spriteDict;
