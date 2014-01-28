@@ -1832,17 +1832,20 @@ MonoBehaviour:
   crazyFire: 0
   killCount: 0
   craziness: .400000006
-  crazySpeedup: .5
+  crazySpeedup: .699999988
   damageMult: 1
   damageMultEasy: .75
   damageMultMed: 1
   damageMultHard: 1.5
+  damageMultEndless: .75
+  damageMultEndlessIncrement: .100000001
   bomb: 0
   bombParts: 0
   bombPartsNeeded: 2
   bombPartsNeededEasy: 1
   bombPartsNeededMed: 2
   bombPartsNeededHard: 4
+  bombPartsNeededEndless: 2
   maxBombs: 3
   health: 75
   maxHealth: 100
@@ -4488,12 +4491,20 @@ MonoBehaviour:
   spawnRateMinEasy: 1.39999998
   spawnRateMinMed: 1
   spawnRateMinHard: .699999988
+  spawnRateMinEndless: 1
+  spawnRateMinEndlessIncrement: .899999976
   spawnRateMax: 2
   spawnRateMaxEasy: 2.79999995
   spawnRateMaxMed: 2
   spawnRateMaxHard: 1.39999998
+  spawnRateMaxEndless: 2
+  spawnRateMaxEndlessIncrement: .899999976
   spawnCount: 0
   spawnThreshold: 50
+  spawnThresholdEasy: 50
+  spawnThresholdMed: 70
+  spawnThresholdHard: 100
+  spawnThresholdEndless: 15
   killThreshold: 35
 --- !u!4 &1407588126
 Transform:
@@ -6044,6 +6055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3894316c8b714914c99152c20885ec3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endless: 0
   player: {fileID: 445680468}
   spawning: {fileID: 1407588125}
   shooter: {fileID: 11400000, guid: cbb99bf33003d493da10a6a1761c9823, type: 2}

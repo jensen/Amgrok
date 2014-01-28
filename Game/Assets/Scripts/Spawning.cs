@@ -19,13 +19,21 @@ public class Spawning : MonoBehaviour {
 	public float spawnRateMinEasy = 1.4F;
 	public float spawnRateMinMed = 1F;
 	public float spawnRateMinHard = 0.7F;
+	public float spawnRateMinEndless = 1F;
+	public float spawnRateMinEndlessIncrement = 0.9F;
 	/// Determines maximum spawn delay
 	public float spawnRateMax = 2F;
 	public float spawnRateMaxEasy = 2.8F;
 	public float spawnRateMaxMed = 2F;
 	public float spawnRateMaxHard = 1.4F;
+	public float spawnRateMaxEndless = 2F;
+	public float spawnRateMaxEndlessIncrement = 0.9F;
 	public int spawnCount = 0;
 	public int spawnThreshold = 100;
+	public int spawnThresholdEasy = 50;
+	public int spawnThresholdMed = 70;
+	public int spawnThresholdHard = 100; //These are designed to keep game length the same in spite off differing spawn rate
+	public int spawnThresholdEndless = 15; //Time per difficulty increase.
 	public int killThreshold = 100;
 
 	private float _nextSpawn;
@@ -59,7 +67,9 @@ public class Spawning : MonoBehaviour {
 		spawnCount++;
 
 		if (spawnCount > spawnThreshold) {
-			if (LevelManager.Instance.player.killCount > killThreshold) {
+			if (LevelManager.Instance.endless) {
+				LevelManager.Instance.EndlessUpgrade();
+			} else if (LevelManager.Instance.player.killCount > killThreshold) {
 				Application.LoadLevel("Violent");
 			} else {
 				Application.LoadLevel("Peaceful");

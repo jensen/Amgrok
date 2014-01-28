@@ -52,14 +52,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fbcd7f74ad0a44e5961b73206ca03f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minShotDelay: .25
-  maxShotDelay: .5
+  minShotDelay: 2
+  maxShotDelay: 2.5
   minShotDelayEasy: 1
   maxShotDelayEasy: 1.5
   minShotDelayMed: .5
   maxShotDelayMed: 1
   minShotDelayHard: .25
   maxShotDelayHard: .5
+  minShotDelayEndless: 2
+  maxShotDelayEndless: 2.5
+  minShotDelayEndlessIncrement: .800000012
+  maxShotDelayEndlessIncrement: .800000012
   timeTillShot: 4
   bullet: {fileID: 11400002, guid: 28f7e2bcf6c264860b9ad81d216515d7, type: 2}
 --- !u!114 &11400002
@@ -103,7 +107,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: 1acc1143ec8a89d4197770a892d54a17, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8aa645f1b641847ffb68e8bc8d0f7f82, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

@@ -11,6 +11,10 @@ public class Shooter : MonoBehaviour {
 	public float maxShotDelayMed = 1F;
 	public float minShotDelayHard = .25F;
 	public float maxShotDelayHard = .5F;
+	public float minShotDelayEndless = 2F;
+	public float maxShotDelayEndless = 2.5F;
+	public float minShotDelayEndlessIncrement = 0.8F;
+	public float maxShotDelayEndlessIncrement = 0.8F;
 	public float timeTillShot = 3F;
 	public EnemyBullet bullet;
 	// Use this for initialization

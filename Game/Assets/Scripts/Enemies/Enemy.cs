@@ -30,6 +30,8 @@ public class Enemy : MonoBehaviour {
 	static public float speedMultiplierEasy = 0.7F;
 	static public float speedMultiplierMed = 1F;
 	static public float speedMultiplierHard = 1.2F;
+	static public float speedMultiplierEndless = 0.7F;
+	static public float speedMultiplierEndlessIncrement = 0.1F;
 	public float yMax;
 	/// Change this field to change the enemy's sprite
 	public Sprite sprite;

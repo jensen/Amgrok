@@ -17,7 +17,8 @@ public class TitleMenu : Menu {
 		                             Screen.width - 2 * margin, (1 - menuVertPos - bottomPadding) * Screen.height));
 		GUILayout.BeginVertical();
 		GUILayout.FlexibleSpace();
-
+		
+		if (GUILayout.Button("Endless")) LoadWithDifficulty(0);
 		if (GUILayout.Button("Easy")) LoadWithDifficulty(1);
 		if (GUILayout.Button("Medium")) LoadWithDifficulty(2);
 		if (GUILayout.Button("Hard")) LoadWithDifficulty(3);

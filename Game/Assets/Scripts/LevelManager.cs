@@ -11,6 +11,9 @@ using System.Collections;
 /// </code>
 /// </summary>
 public class LevelManager : MonoBehaviour {
+	//are we in endless mode?
+	public bool endless;
+
 	public Player player;
 	public Spawning spawning;
 	public Shooter shooter;
@@ -53,10 +56,28 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 
+	public void EndlessUpgrade() {
+		player.damageMult = player.damageMultEndlessIncrement;
+		shooter.maxShotDelay *= shooter.maxShotDelayEndlessIncrement;
+		shooter.minShotDelay *= shooter.minShotDelayEndlessIncrement;
+		Enemy.speedMultiplier += Enemy.speedMultiplierEndlessIncrement;
+		spawning.spawnRateMin *= spawning.spawnRateMinEndlessIncrement;
+		spawning.spawnRateMax *= spawning.spawnRateMaxEndlessIncrement;
+		}
+
 	public void ChangeDifficulty(int difficulty) { //Takes 1=easy, 2=med,3=hard, 0=endless (not implemented)
 			if (player != null) {
 			this.difficulty = difficulty;
-			if (difficulty == 1) {
+			if (difficulty == 0) {
+				endless = true;
+				player.damageMult = player.damageMultEndless;
+				player.bombPartsNeeded = player.bombPartsNeededEndless;
+				shooter.maxShotDelay = shooter.maxShotDelayEndless;
+				shooter.minShotDelay = shooter.minShotDelayEndless;
+				Enemy.speedMultiplier = Enemy.speedMultiplierEndless;
+				spawning.spawnRateMin = spawning.spawnRateMinEndless;
+				spawning.spawnRateMax = spawning.spawnRateMaxEndless;
+			}else if (difficulty == 1) {
 				player.damageMult = player.damageMultEasy;
 				player.bombPartsNeeded = player.bombPartsNeededEasy;
 				shooter.maxShotDelay = shooter.maxShotDelayEasy;

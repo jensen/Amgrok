@@ -23,12 +23,15 @@ public class Player : MonoBehaviour {
 	public float damageMultEasy = 0.75F;
 	public float damageMultMed = 1F;
 	public float damageMultHard = 1.5F;
+	public float damageMultEndless = 0.75F;
+	public float damageMultEndlessIncrement = 0.1F;
 	public int bomb = 0;
 	public int bombParts = 0;
 	public int bombPartsNeeded = 2;
 	public int bombPartsNeededEasy = 1;
 	public int bombPartsNeededMed = 2;
 	public int bombPartsNeededHard = 4;
+	public int bombPartsNeededEndless = 2;
 	public int maxBombs = 3;
 	public float health = 100;
 	public float maxHealth = 100;
@@ -168,6 +171,7 @@ public class Player : MonoBehaviour {
 
 	void Bomb () {
 		Enemy[] allEnemies = FindObjectsOfType<Enemy>() as Enemy[];
+		killCount += allEnemies.Length;
 		foreach (Enemy e in allEnemies) {
 			e.BombDestroy();
 		}
