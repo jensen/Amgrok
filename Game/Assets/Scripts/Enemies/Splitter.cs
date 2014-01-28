@@ -5,7 +5,7 @@ using System.Collections;
 public class Splitter : MonoBehaviour {
 	public DelayedSplit delayedSplit;
 	public float splitDelay = 0.2f;
-	public Vector2 splitSpeed = new Vector2(1.2f, 0);
+	public float splitSpeed = 3F;
 
 	private Enemy _enemy;
 
