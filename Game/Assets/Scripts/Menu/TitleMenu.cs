@@ -18,9 +18,9 @@ public class TitleMenu : Menu {
 		GUILayout.BeginVertical();
 		GUILayout.FlexibleSpace();
 
-		if (GUILayout.Button("Easy")) LoadWithDifficulty(0);
-		if (GUILayout.Button("Medium")) LoadWithDifficulty(1);
-		if (GUILayout.Button("Hard")) LoadWithDifficulty(2);
+		if (GUILayout.Button("Easy")) LoadWithDifficulty(1);
+		if (GUILayout.Button("Medium")) LoadWithDifficulty(2);
+		if (GUILayout.Button("Hard")) LoadWithDifficulty(3);
 		if (GUILayout.Button("Instructions")) Application.LoadLevel ("Instructions");
 		if (GUILayout.Button("Credits")) Application.LoadLevel("Credits");
 		if (GUILayout.Button("Quit")) Application.Quit();
