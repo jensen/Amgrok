@@ -6045,7 +6045,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 445680468}
-  spawning: {fileID: 0}
+  spawning: {fileID: 1407588125}
+  shooter: {fileID: 11400000, guid: cbb99bf33003d493da10a6a1761c9823, type: 2}
   levelBounds:
     serializedVersion: 2
     x: -4

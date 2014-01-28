@@ -5,8 +5,8 @@ public class Shooter : MonoBehaviour {
 
 	public float minShotDelay = 1F;
 	public float maxShotDelay = 1.5F;
-	public float minShotDelayEasy = 1F;
-	public float maxShotDelayEasy = 1.5F;
+	public float minShotDelayEasy = 2F;
+	public float maxShotDelayEasy = 2.5F;
 	public float minShotDelayMed = .5F;
 	public float maxShotDelayMed = 1F;
 	public float minShotDelayHard = .25F;

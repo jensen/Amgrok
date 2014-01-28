@@ -7,6 +7,17 @@ public enum BorderBehavior {
 	/// Bounce around border
 	Bounce,
 	/// Stop moving sideways on border
+	Stop,
+	/// Immediately destroy the Enemy
+	Destroy
+}
+
+public enum TopBehavior {
+	/// Goes through border
+	None,
+	/// Bounce around border
+	Bounce,
+	/// Stop moving sideways on border
 	Stop
 }
 
@@ -16,9 +27,10 @@ public class Enemy : MonoBehaviour {
 	public int maxShotsToKill = 1;
 	public float collisionDamage = 15;
 	static public float speedMultiplier = 1F;
-	static public float speedMultiplierEasy = 0.8F;
+	static public float speedMultiplierEasy = 0.7F;
 	static public float speedMultiplierMed = 1F;
 	static public float speedMultiplierHard = 1.2F;
+	public float yMax;
 	/// Change this field to change the enemy's sprite
 	public Sprite sprite;
 	/// Speed of the enemy
@@ -28,7 +40,8 @@ public class Enemy : MonoBehaviour {
 
 	public bool touchedPlayer = false;
 
-	public BorderBehavior borderBehavior = BorderBehavior.Bounce;
+	public BorderBehavior sideBehaviour = BorderBehavior.Bounce;
+	public BorderBehavior topBehaviour = BorderBehavior.Bounce;
 
 	private SpriteRenderer _sr;
 
@@ -41,6 +54,7 @@ public class Enemy : MonoBehaviour {
 		//gameObject.AddComponent<Rigidbody2D>();
 		//rigidbody2D.isKinematic = true;
 		shotsToKill = maxShotsToKill;
+		yMax = LevelManager.Instance.levelBounds.yMax + 1F;
 	}
 
 	void Update() {
@@ -104,10 +118,14 @@ public class Enemy : MonoBehaviour {
 		// update position
 		transform.position += (Vector3) speed * speedMultiplier * Time.fixedDeltaTime;
 
+		//Deal with sides
 		if (transform.position.x <= xMin
 		    || transform.position.x >= xMax) {
-			switch (borderBehavior) {
+			switch (sideBehaviour) {
 			case BorderBehavior.None:
+				break;
+			case BorderBehavior.Destroy:
+				Destroy (gameObject);
 				break;
 			case BorderBehavior.Bounce:
 				speed.x *= -1;
@@ -117,11 +135,33 @@ public class Enemy : MonoBehaviour {
 				break;
 			}
 		}
+
+		//Deal with top
+		
+		if (transform.position.y >= yMax) {
+			switch (topBehaviour) {
+			case BorderBehavior.None:
+				break;
+			case BorderBehavior.Destroy:
+				Destroy (gameObject);
+				break;
+			case BorderBehavior.Bounce:
+				speed.y *= -1;
+				break;
+			case BorderBehavior.Stop:
+				speed.y *= 0;
+				break;
+			}
+		}
+
 		transform.position = new Vector2(
 			Mathf.Clamp(transform.position.x,
 		            xMin + Mathf.Abs (speed.x) * speedMultiplier * Time.deltaTime,
 		            xMax - Mathf.Abs (speed.x) * speedMultiplier * Time.deltaTime),
-			transform.position.y);
+			Mathf.Clamp(transform.position.y,
+		            float.MinValue,
+		            yMax - Mathf.Abs (speed.y) * speedMultiplier * Time.deltaTime
+		            ));
 
 		// enemy has reached bottom?
 		if (transform.position.y <= LevelManager.Instance.levelBounds.yMin) {

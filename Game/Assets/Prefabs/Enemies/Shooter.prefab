@@ -52,9 +52,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fbcd7f74ad0a44e5961b73206ca03f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minShotDelay: 2
-  maxShotDelay: 4
-  timeTillShot: 3
+  minShotDelay: .25
+  maxShotDelay: .5
+  minShotDelayEasy: 1
+  maxShotDelayEasy: 1.5
+  minShotDelayMed: .5
+  maxShotDelayMed: 1
+  minShotDelayHard: .25
+  maxShotDelayHard: .5
+  timeTillShot: 4
   bullet: {fileID: 11400002, guid: 28f7e2bcf6c264860b9ad81d216515d7, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
@@ -69,11 +75,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxShotsToKill: 1
   collisionDamage: 15
+  yMax: 0
   sprite: {fileID: 0}
   speed: {x: 4, y: -2}
   gotShot: 0
   touchedPlayer: 0
-  borderBehavior: 1
+  sideBehaviour: 0
+  topBehaviour: 0
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -95,7 +103,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: a88f46dcd19337b4c851cd855aa064c3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 063c83492efa23c40be9d0923d6f0b0b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

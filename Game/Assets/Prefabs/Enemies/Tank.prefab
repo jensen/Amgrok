@@ -67,11 +67,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxShotsToKill: 10
   collisionDamage: 15
+  yMax: 0
   sprite: {fileID: 0}
   speed: {x: 0, y: -.5}
   gotShot: 0
   touchedPlayer: 0
-  borderBehavior: 1
+  sideBehaviour: 0
+  topBehaviour: 0
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -93,7 +95,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: 8aa645f1b641847ffb68e8bc8d0f7f82, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4fb3de02eabd8ba42bc78458acfabdd8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

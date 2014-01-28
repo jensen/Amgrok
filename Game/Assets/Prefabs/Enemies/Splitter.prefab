@@ -54,11 +54,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxShotsToKill: 1
   collisionDamage: 15
+  yMax: 0
   sprite: {fileID: 0}
   speed: {x: 0, y: -3}
   gotShot: 0
   touchedPlayer: 0
-  borderBehavior: 1
+  sideBehaviour: 0
+  topBehaviour: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
