@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: .5
-  healAmount: 15
+  healAmount: 10
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4689a10e146b9154ab34240fa5fe082c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxShotsToKill: 10
+  maxShotsToKill: 7
   collisionDamage: 15
   yMax: 0
   sprite: {fileID: 0}
@@ -95,7 +95,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: 24c3a5af76c484e9f9282207f3bbf1fc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 465255e1d97d27445aef23d6dc5d1c33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

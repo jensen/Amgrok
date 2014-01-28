@@ -52,8 +52,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fbcd7f74ad0a44e5961b73206ca03f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minShotDelay: 2
-  maxShotDelay: 2.5
+  minShotDelay: .25
+  maxShotDelay: .5
   minShotDelayEasy: 1
   maxShotDelayEasy: 1.5
   minShotDelayMed: .5
@@ -107,7 +107,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: 2f90048b589416b439b07d0a149a82b7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b5969d2abc625487899e11abacccd121, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

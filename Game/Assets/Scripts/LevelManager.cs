@@ -21,6 +21,7 @@ public class LevelManager : MonoBehaviour {
 	public Rect levelBounds;
 	public int difficulty;
 	public InGameHUDScript hud;
+	public int level = 0;
 
 	private static bool _onDestroy = false;
 	private static LevelManager _instance;
@@ -63,6 +64,8 @@ public class LevelManager : MonoBehaviour {
 		Enemy.speedMultiplier += Enemy.speedMultiplierEndlessIncrement;
 		spawning.spawnRateMin *= spawning.spawnRateMinEndlessIncrement;
 		spawning.spawnRateMax *= spawning.spawnRateMaxEndlessIncrement; //* for ones that decrease, + for increase.
+		level ++;
+		hud.Change ();
 		}
 
 
@@ -76,6 +79,7 @@ public class LevelManager : MonoBehaviour {
 		spawning.spawnRateMin = spawning.spawnRateMinEndless;
 		spawning.spawnRateMax = spawning.spawnRateMaxEndless;
 		spawning.spawnThreshold = spawning.spawnThresholdEndless;
+		level = 0;
 	}
 
 	public void ChangeDifficulty(int difficulty) { //Takes 1=easy, 2=med,3=hard, 0=endless (not implemented)

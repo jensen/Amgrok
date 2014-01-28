@@ -134,7 +134,7 @@ public class Player : MonoBehaviour {
 
 			// Show end screen.
 			transform.parent.gameObject.AddComponent<GameOverMenu>();
-
+			LevelManager.Instance.EndlessRestart();
 			GameObject gameOver = GameObject.Find("Game Over");
 			gameOver.GetComponent<SpriteRenderer>().enabled = true;
 
