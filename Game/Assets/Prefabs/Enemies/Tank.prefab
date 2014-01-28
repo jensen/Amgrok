@@ -72,8 +72,8 @@ MonoBehaviour:
   speed: {x: 0, y: -.5}
   gotShot: 0
   touchedPlayer: 0
-  sideBehaviour: 0
-  topBehaviour: 0
+  sideBehaviour: 1
+  topBehaviour: 1
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -95,7 +95,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: 4fb3de02eabd8ba42bc78458acfabdd8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c6a50592270ec44d889fbd0b82e8929f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

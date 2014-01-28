@@ -1826,7 +1826,7 @@ MonoBehaviour:
   untilt: {fileID: 21300000, guid: 7eedc6b96af3d4ef7baffdfeec5cb635, type: 3}
   horizSpeed: 10
   vertSpeed: 10
-  fireDelay: .699999988
+  fireDelay: .550000012
   bombReloadTime: 2
   bombDelay: .300000012
   crazyFire: 0

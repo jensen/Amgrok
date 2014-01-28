@@ -22,7 +22,7 @@ public class Splitter : MonoBehaviour {
 		ds.splitDelay = splitDelay;
 		ds.splitSpeed = splitSpeed;
 		if (LevelManager.Instance.player != null) {
-						LevelManager.Instance.player.shotNumber += 1;
+						LevelManager.Instance.player.incrementShotNumber();
 				}
 	}
 

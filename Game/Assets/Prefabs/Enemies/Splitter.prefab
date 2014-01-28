@@ -59,7 +59,7 @@ MonoBehaviour:
   speed: {x: 0, y: -3}
   gotShot: 0
   touchedPlayer: 0
-  sideBehaviour: 0
+  sideBehaviour: 1
   topBehaviour: 0
 --- !u!114 &11400002
 MonoBehaviour:
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayedSplit: {fileID: 11400000, guid: db02cf5c3635ec44893c43135b6fc391, type: 2}
   splitDelay: .200000003
-  splitSpeed: {x: 1.20000005, y: .5}
+  splitSpeed: 1
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -96,7 +96,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: 24c3a5af76c484e9f9282207f3bbf1fc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8aa645f1b641847ffb68e8bc8d0f7f82, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

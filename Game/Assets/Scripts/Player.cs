@@ -44,6 +44,11 @@ public class Player : MonoBehaviour {
 	public bool _bombing;
 	private Vector3 _bomb_position;
 
+	public void incrementShotNumber () {
+		if (shotNumber < 99) {
+						shotNumber += 1;
+				}
+		}
 	void Start () {
 		var go = new GameObject(gameObject.name + " Sprite");
 
