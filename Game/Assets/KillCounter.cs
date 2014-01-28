@@ -9,8 +9,12 @@ public class KillCounter : MonoBehaviour {
 	}
 
 	void ChangeHUDElement () {
-		gameObject.GetComponent<GUIText>().text = LevelManager.Instance.player.killCount.ToString();
+		if (LevelManager.Instance.endless) {
+			gameObject.GetComponent<GUIText> ().text = LevelManager.Instance.player.killCount.ToString ();
+		} else {
+			gameObject.GetComponent<GUIText> ().text = "";
 		}
+	}
 
 	// Update is called once per frame
 	void Update () {
