@@ -3,18 +3,12 @@ using System.Collections;
 
 public class ControlManager : MonoBehaviour {
 	#region Instance
-	private static bool _onDestroy = false;
 	private static ControlManager _instance;
 
 	public static ControlManager Instance {
 		get {
 
 			if (_instance == null) {
-				
-				if (_onDestroy) {
-					Debug.Log("Application is quitting, don't create a new ControlManager. (return null)");
-					return null;
-				}
 
 				var cm = GameObject.FindObjectOfType<ControlManager>();
 
@@ -33,6 +27,20 @@ public class ControlManager : MonoBehaviour {
 	#endregion
 
 #if UNITY_ANDROID || UNITY_IPHONE
+	
+	public float Horizontal { get { return 0; } }
+	public float Vertical { get { return 0; } }
+	public bool Fire {
+		get {
+			return false;
+		}
+	}
+	
+	public bool Bomb {
+		get {
+			return false;
+		}
+	}
 
 #else
 
@@ -53,7 +61,4 @@ public class ControlManager : MonoBehaviour {
 
 #endif
 
-	void OnDestroy() {
-		_onDestroy = true;
-	}
 }
