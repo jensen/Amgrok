@@ -65,15 +65,17 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float horizInp = Input.GetAxis ("Horizontal");
+		ControlManager cm = ControlManager.Instance;
+
+		float horizInp = cm.Horizontal;//Input.GetAxis ("Horizontal");
 		float horiz = horizInp * horizSpeed * Time.deltaTime;
-		float vertInp = Input.GetAxis ("Vertical");
+		float vertInp = cm.Vertical; //Input.GetAxis ("Vertical");
 		if (_bombing && Time.time > _nextBomb) {
 			_bombing = false;
 			_nextBomb = bombReloadTime + Time.time;
 			Bomb ();
 		}
-		if (Input.GetKey (KeyCode.RightControl) || Input.GetKey(KeyCode.LeftControl) || Input.GetKey (KeyCode.Space) || Input.GetKey (KeyCode.Z)) {
+		if (cm.Fire) {
 
 			if (Time.time > _nextFire) {
 				if (crazyFire) {
@@ -84,7 +86,7 @@ public class Player : MonoBehaviour {
 				Shoot ();
 			}
 		}
-		if (Input.GetKey (KeyCode.X) || Input.GetKey(KeyCode.LeftShift) || Input.GetKey (KeyCode.RightShift)) {
+		if (cm.Bomb) {
 				if (Time.time > _nextBomb && bomb >= 1) {
 					bomb -= 1;
 					_nextBomb = bombDelay + Time.time;
