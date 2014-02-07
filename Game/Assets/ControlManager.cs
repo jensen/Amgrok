@@ -26,19 +26,37 @@ public class ControlManager : MonoBehaviour {
 	}
 	#endregion
 
+	public float touchMoveGain = 2f;
+	public bool bombing = false;
+
 #if UNITY_ANDROID || UNITY_IPHONE
-	
-	public float Horizontal { get { return 0; } }
-	public float Vertical { get { return 0; } }
+	public Vector2 command = Vector2.zero;
+
+	void Update() {
+		command = Vector2.zero;
+		bombing = (Input.touchCount == 2);
+
+		if (Input.touchCount > 0) {
+			Vector2 center = new Vector2(Screen.width / 2f, Screen.height / 2f);
+			//Vector2 center = Camera.main.WorldToScreenPoint(LevelManager.Instance.player.transform.position);
+
+			var t = Input.GetTouch(0);
+			command = (touchMoveGain * (center - t.position) / Screen.width).normalized;
+		}
+	}
+
+
+	public float Horizontal { get { return -command.x; } }
+	public float Vertical { get { return -command.y; } }
 	public bool Fire {
 		get {
-			return false;
+			return true;
 		}
 	}
 	
 	public bool Bomb {
 		get {
-			return false;
+			return bombing;
 		}
 	}
 
